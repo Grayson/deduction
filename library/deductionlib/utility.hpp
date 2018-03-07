@@ -1,5 +1,5 @@
 //
-//  deductionlib.hpp
+//  utility.hpp
 //  deductionlib
 //
 //  Created by Grayson Hansard on 3/6/18.
@@ -8,11 +8,4 @@
 
 #pragma once
 
-#include "utility.hpp"
-#include <string>
-
-namespace deduction {
-	EXPORT extern std::string const & version;
-
-	EXPORT bool test();
-}
+#define EXPORT __attribute__((visibility("default")))

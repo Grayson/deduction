@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D3FFF5C204F851200CC49DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF5B204F851200CC49DF /* main.cpp */; };
 		1D3FFF63204F854E00CC49DF /* libdeductionlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3FFF64204F854E00CC49DF /* libdeductionlib.a */; };
+		1D3FFF67204F85DC00CC49DF /* versioninfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF66204F85DC00CC49DF /* versioninfo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,8 @@
 		1D3FFF58204F851200CC49DF /* tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tests; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF5B204F851200CC49DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1D3FFF64204F854E00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3FFF65204F858000CC49DF /* catch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
+		1D3FFF66204F85DC00CC49DF /* versioninfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = versioninfo.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +64,9 @@
 		1D3FFF5A204F851200CC49DF /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				1D3FFF65204F858000CC49DF /* catch.hpp */,
 				1D3FFF5B204F851200CC49DF /* main.cpp */,
+				1D3FFF66204F85DC00CC49DF /* versioninfo.cpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3FFF67204F85DC00CC49DF /* versioninfo.cpp in Sources */,
 				1D3FFF5C204F851200CC49DF /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,18 +250,28 @@
 		1D3FFF60204F851200CC49DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8Z8N96C99;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include/";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/llvm/lib;
+				OTHER_LDFLAGS = "-lclang";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		1D3FFF61204F851200CC49DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8Z8N96C99;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include/";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/llvm/lib;
+				OTHER_LDFLAGS = "-lclang";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

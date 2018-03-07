@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF41204F845F00CC49DF /* deductionlib.hpp */; };
-		1D3FFF44204F845F00CC49DF /* deductionlibPriv.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF43204F845F00CC49DF /* deductionlibPriv.hpp */; };
+		1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF41204F845F00CC49DF /* deductionlib.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF45204F845F00CC49DF /* deductionlib.cpp */; };
+		1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF68204F86E600CC49DF /* utility.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D3FFF3E204F845F00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF41204F845F00CC49DF /* deductionlib.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deductionlib.hpp; sourceTree = "<group>"; };
-		1D3FFF43204F845F00CC49DF /* deductionlibPriv.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deductionlibPriv.hpp; sourceTree = "<group>"; };
 		1D3FFF45204F845F00CC49DF /* deductionlib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deductionlib.cpp; sourceTree = "<group>"; };
+		1D3FFF68204F86E600CC49DF /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				1D3FFF41204F845F00CC49DF /* deductionlib.hpp */,
-				1D3FFF43204F845F00CC49DF /* deductionlibPriv.hpp */,
 				1D3FFF45204F845F00CC49DF /* deductionlib.cpp */,
+				1D3FFF68204F86E600CC49DF /* utility.hpp */,
 			);
 			path = deductionlib;
 			sourceTree = "<group>";
@@ -64,7 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */,
-				1D3FFF44204F845F00CC49DF /* deductionlibPriv.hpp in Headers */,
+				1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +244,11 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = /usr/local/opt/llvm/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/llvm/lib;
+				OTHER_LDFLAGS = "-Lclang";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/deduction;
 			};
 			name = Debug;
 		};
@@ -257,7 +261,11 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = /usr/local/opt/llvm/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/llvm/lib;
+				OTHER_LDFLAGS = "-Lclang";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/deduction;
 			};
 			name = Release;
 		};
