@@ -232,6 +232,7 @@
 		1D3FFF33204F837900CC49DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8Z8N96C99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -241,6 +242,7 @@
 		1D3FFF34204F837900CC49DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8Z8N96C99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
