@@ -10,6 +10,8 @@
 		1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF41204F845F00CC49DF /* deductionlib.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF45204F845F00CC49DF /* deductionlib.cpp */; };
 		1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF68204F86E600CC49DF /* utility.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D3FFF6C2050B91F00CC49DF /* cursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF6A2050B91F00CC49DF /* cursor.cpp */; };
+		1D3FFF6D2050B91F00CC49DF /* cursor.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF6B2050B91F00CC49DF /* cursor.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +19,8 @@
 		1D3FFF41204F845F00CC49DF /* deductionlib.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deductionlib.hpp; sourceTree = "<group>"; };
 		1D3FFF45204F845F00CC49DF /* deductionlib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deductionlib.cpp; sourceTree = "<group>"; };
 		1D3FFF68204F86E600CC49DF /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
+		1D3FFF6A2050B91F00CC49DF /* cursor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cursor.cpp; sourceTree = "<group>"; };
+		1D3FFF6B2050B91F00CC49DF /* cursor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = cursor.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 				1D3FFF41204F845F00CC49DF /* deductionlib.hpp */,
 				1D3FFF45204F845F00CC49DF /* deductionlib.cpp */,
 				1D3FFF68204F86E600CC49DF /* utility.hpp */,
+				1D3FFF6A2050B91F00CC49DF /* cursor.cpp */,
+				1D3FFF6B2050B91F00CC49DF /* cursor.hpp */,
 			);
 			path = deductionlib;
 			sourceTree = "<group>";
@@ -65,6 +71,7 @@
 			files = (
 				1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */,
 				1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */,
+				1D3FFF6D2050B91F00CC49DF /* cursor.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */,
+				1D3FFF6C2050B91F00CC49DF /* cursor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
