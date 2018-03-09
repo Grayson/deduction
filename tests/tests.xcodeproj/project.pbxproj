@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D063E01205231FD0067AB55 /* enum_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D063E00205231FD0067AB55 /* enum_tests.cpp */; };
+		1D063E022052326B0067AB55 /* enum.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D063DFF205231CF0067AB55 /* enum.hpp */; };
 		1D3FFF5C204F851200CC49DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF5B204F851200CC49DF /* main.cpp */; };
 		1D3FFF63204F854E00CC49DF /* libdeductionlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3FFF64204F854E00CC49DF /* libdeductionlib.a */; };
 		1D3FFF67204F85DC00CC49DF /* versioninfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF66204F85DC00CC49DF /* versioninfo.cpp */; };
@@ -15,16 +17,19 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		1D3FFF56204F851200CC49DF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = cases;
+			dstSubfolderSpec = 16;
 			files = (
+				1D063E022052326B0067AB55 /* enum.hpp in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D063DFF205231CF0067AB55 /* enum.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = enum.hpp; sourceTree = "<group>"; };
+		1D063E00205231FD0067AB55 /* enum_tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = enum_tests.cpp; path = tests/enum_tests.cpp; sourceTree = SOURCE_ROOT; };
 		1D3FFF58204F851200CC49DF /* tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tests; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF5B204F851200CC49DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1D3FFF64204F854E00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D063DFE205231A00067AB55 /* cases */ = {
+			isa = PBXGroup;
+			children = (
+				1D063DFF205231CF0067AB55 /* enum.hpp */,
+			);
+			path = cases;
+			sourceTree = "<group>";
+		};
 		1D3FFF4F204F851200CC49DF = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +77,8 @@
 		1D3FFF5A204F851200CC49DF /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				1D063DFE205231A00067AB55 /* cases */,
+				1D063E00205231FD0067AB55 /* enum_tests.cpp */,
 				1D3FFF65204F858000CC49DF /* catch.hpp */,
 				1D3FFF5B204F851200CC49DF /* main.cpp */,
 				1D3FFF66204F85DC00CC49DF /* versioninfo.cpp */,
@@ -137,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3FFF67204F85DC00CC49DF /* versioninfo.cpp in Sources */,
+				1D063E01205231FD0067AB55 /* enum_tests.cpp in Sources */,
 				1D3FFF5C204F851200CC49DF /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
