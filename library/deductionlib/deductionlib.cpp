@@ -17,7 +17,7 @@
 namespace {
 	CXChildVisitResult visit(CXCursor cursor, CXCursor parent, CXClientData client_data) {
 		auto wrapper = deduction::cursor { cursor };
-		if (wrapper.is_invalid() || !wrapper.is_visible() || !wrapper.is_available() || !wrapper.is_in_main_file() || !wrapper.is_preprocessing())
+		if (wrapper.is_invalid() || !wrapper.is_visible() || !wrapper.is_available() || !wrapper.is_in_main_file() || wrapper.is_preprocessing())
 			return CXChildVisit_Continue;
 
 		std::cout << wrapper.debug_description() << std::endl;
