@@ -29,15 +29,14 @@ namespace {
 namespace deduction {
 	std::string const & version = "0.0.1";
 
-	bool test() {
+	bool parse(const std::string & sourcefile) {
 		auto index = clang_createIndex(0, 0);
-		auto source = "/Volumes/Data/Users/ghansard/Desktop/deduction/library/deductionlib/deductionlib.hpp";
 		char const * const args[] = {};
 		auto argCount = 0;
 		CXUnsavedFile *unsavedFiles = nullptr;
 		auto unsavedFileCount = 0;
 		auto options = 0;
-		auto translationUnit = clang_parseTranslationUnit(index, source, args, argCount, unsavedFiles, unsavedFileCount, options);
+		auto translationUnit = clang_parseTranslationUnit(index, sourcefile.c_str(), args, argCount, unsavedFiles, unsavedFileCount, options);
 
 		if (!translationUnit)
 		{
@@ -52,5 +51,10 @@ namespace deduction {
 		clang_disposeIndex(index);
 
 		return true;
+	}
+
+	bool test() {
+		auto source = "/Volumes/Data/Users/ghansard/Desktop/deduction/library/deductionlib/deductionlib.hpp";
+		return parse(source);
 	}
 }

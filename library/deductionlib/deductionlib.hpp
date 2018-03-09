@@ -15,4 +15,6 @@ namespace deduction {
 	EXPORT extern std::string const & version;
 
 	EXPORT bool test();
+
+	EXPORT bool parse(const std::string & sourcefile);
 }
