@@ -17,6 +17,19 @@ namespace {
 		return tmp;
 	}
 
+	deduction::language map(CXLanguageKind languageKind) {
+		switch (languageKind) {
+		case CXLanguage_C:
+			return deduction::language::c;
+		case CXLanguage_ObjC:
+			return deduction::language::objc;
+		case CXLanguage_CPlusPlus:
+			return deduction::language::cpp;
+		default:
+			return deduction::language::invalid;
+		}
+	}
+
 	std::string qualify_name(CXCursor cursor) {
 		auto canContinue = [](CXCursor const & tmp) {
 			auto kind = clang_getCursorKind(tmp);
@@ -89,6 +102,10 @@ namespace deduction {
 
 	std::string const & cursor::name() {
 		return *(_name ? _name : _name = map(clang_getCursorSpelling(_backing)));
+	}
+
+	language cursor::language() const {
+		return map(clang_getCursorLanguage(_backing));
 	}
 
 	std::string cursor::debug_description() {

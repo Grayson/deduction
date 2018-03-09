@@ -10,6 +10,7 @@
 
 #include <string>
 #include <clang-c/Index.h>
+#include "language.hpp"
 #include "utility.hpp"
 
 namespace deduction {
@@ -32,6 +33,7 @@ namespace deduction {
 		std::string const & full_name();
 		std::string const & name();
 
+		language language() const;
 		std::string debug_description();
 
 	private:
