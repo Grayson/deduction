@@ -14,5 +14,5 @@ namespace deduction {
 		c,
 		objc,
 		cpp,
-	}
+	};
 }
