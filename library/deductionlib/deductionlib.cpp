@@ -15,12 +15,21 @@
 #include "cursor.hpp"
 
 namespace {
+	CXChildVisitResult visit_enum_cases(CXCursor cursor, CXCursor parent, CXClientData client_data) {
+		reinterpret_cast<std::vector<deduction::cursor> *>(client_data)->emplace_back(cursor);
+		return CXChildVisit_Continue;
+	}
+
 	CXChildVisitResult visit(CXCursor cursor, CXCursor parent, CXClientData client_data) {
 		auto wrapper = deduction::cursor { cursor };
 		if (wrapper.is_invalid() || !wrapper.is_visible() || !wrapper.is_available() || !wrapper.is_in_main_file() || wrapper.is_preprocessing())
 			return CXChildVisit_Continue;
 
-		std::cout << wrapper.debug_description() << std::endl;
+		if (wrapper.kind() == CXCursor_EnumDecl) {
+			std::vector<deduction::cursor> cases;
+			clang_visitChildren(cursor, visit_enum_cases, &cases);
+			return CXChildVisit_Continue;
+		}
 
 		return CXChildVisit_Recurse;
 	}
