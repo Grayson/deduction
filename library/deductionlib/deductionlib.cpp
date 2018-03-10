@@ -18,10 +18,11 @@
 
 namespace {
 	using namespace deduction;
+	using namespace deduction::clang_utility;
 
 	CXChildVisitResult visit_enum_cases(CXCursor cursor, CXCursor parent, CXClientData client_data) {
-		auto wrapper = deduction::cursor { cursor };
-		reinterpret_cast<std::vector<enumeration::case_label> *>(client_data)->emplace_back(wrapper.name(), wrapper.full_name());
+		auto labels = reinterpret_cast<std::vector<enumeration::case_label> *>(client_data);
+		labels->emplace_back(get_name(cursor), qualify_name(cursor));
 		return CXChildVisit_Continue;
 	}
 
