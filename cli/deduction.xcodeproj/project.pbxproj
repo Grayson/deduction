@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D063E0D205370FA0067AB55 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
 		1D3FFF2B204F837900CC49DF /* deduction */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = deduction; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF2E204F837900CC49DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1D3FFF4E204F84BF00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +62,7 @@
 		1D3FFF2D204F837900CC49DF /* deduction */ = {
 			isa = PBXGroup;
 			children = (
+				1D063E0D205370FA0067AB55 /* json.hpp */,
 				1D3FFF2E204F837900CC49DF /* main.cpp */,
 			);
 			path = deduction;
