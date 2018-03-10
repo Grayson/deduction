@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D063E13205373E90067AB55 /* variant.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E12205373E80067AB55 /* variant.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF41204F845F00CC49DF /* deductionlib.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF45204F845F00CC49DF /* deductionlib.cpp */; };
 		1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF68204F86E600CC49DF /* utility.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		1D063DFD20522BC00067AB55 /* language.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = language.hpp; sourceTree = "<group>"; };
+		1D063E12205373E80067AB55 /* variant.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = variant.hpp; sourceTree = "<group>"; };
 		1D3FFF3E204F845F00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF41204F845F00CC49DF /* deductionlib.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deductionlib.hpp; sourceTree = "<group>"; };
 		1D3FFF45204F845F00CC49DF /* deductionlib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deductionlib.cpp; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		1D3FFF40204F845F00CC49DF /* deductionlib */ = {
 			isa = PBXGroup;
 			children = (
+				1D063E12205373E80067AB55 /* variant.hpp */,
 				1D3FFF41204F845F00CC49DF /* deductionlib.hpp */,
 				1D3FFF45204F845F00CC49DF /* deductionlib.cpp */,
 				1D3FFF68204F86E600CC49DF /* utility.hpp */,
@@ -74,6 +77,7 @@
 				1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */,
 				1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */,
 				1D3FFF6D2050B91F00CC49DF /* cursor.hpp in Headers */,
+				1D063E13205373E90067AB55 /* variant.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
