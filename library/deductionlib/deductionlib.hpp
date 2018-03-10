@@ -8,13 +8,12 @@
 
 #pragma once
 
-#include "utility.hpp"
 #include <string>
+#include "parse-result.hpp"
+#include "utility.hpp"
 
 namespace deduction {
 	EXPORT extern std::string const & version;
 
-	EXPORT bool test();
-
-	EXPORT bool parse(const std::string & sourcefile);
+	EXPORT parse_result parse(const std::string & sourcefile);
 }

@@ -12,22 +12,30 @@
 #include <vector>
 #include <numeric>
 
+#include "clang-utility.hpp"
 #include "cursor.hpp"
+#include "enumeration.hpp"
 
 namespace {
+	using namespace deduction;
+
 	CXChildVisitResult visit_enum_cases(CXCursor cursor, CXCursor parent, CXClientData client_data) {
-		reinterpret_cast<std::vector<deduction::cursor> *>(client_data)->emplace_back(cursor);
+		auto wrapper = deduction::cursor { cursor };
+		reinterpret_cast<std::vector<enumeration::case_label> *>(client_data)->emplace_back(wrapper.name(), wrapper.full_name());
 		return CXChildVisit_Continue;
 	}
 
 	CXChildVisitResult visit(CXCursor cursor, CXCursor parent, CXClientData client_data) {
+		auto items = reinterpret_cast<std::vector<parse_result::item_type> *>(client_data);
+
 		auto wrapper = deduction::cursor { cursor };
 		if (wrapper.is_invalid() || !wrapper.is_visible() || !wrapper.is_available() || !wrapper.is_in_main_file() || wrapper.is_preprocessing())
 			return CXChildVisit_Continue;
 
 		if (wrapper.kind() == CXCursor_EnumDecl) {
-			std::vector<deduction::cursor> cases;
-			clang_visitChildren(cursor, visit_enum_cases, &cases);
+			std::vector<enumeration::case_label> caseLabels;
+			clang_visitChildren(cursor, visit_enum_cases, &caseLabels);
+			items->push_back(enumeration { wrapper.name(), wrapper.full_name(), std::move(caseLabels) });
 			return CXChildVisit_Continue;
 		}
 
@@ -38,7 +46,7 @@ namespace {
 namespace deduction {
 	std::string const & version = "0.0.1";
 
-	bool parse(const std::string & sourcefile) {
+	parse_result parse(const std::string & sourcefile) {
 		auto index = clang_createIndex(0, 0);
 		char const * const args[] = {};
 		auto argCount = 0;
@@ -50,20 +58,16 @@ namespace deduction {
 		if (!translationUnit)
 		{
 			std::cerr << "Unable to parse translation unit. Quitting." << std::endl;
-			return false;
+			return parse_result {};
 		}
 
+		std::vector<parse_result::item_type> items;
 		auto cursor = clang_getTranslationUnitCursor(translationUnit);
-		clang_visitChildren(cursor, visit, nullptr);
+		clang_visitChildren(cursor, visit, &items);
 
 		clang_disposeTranslationUnit(translationUnit);
 		clang_disposeIndex(index);
 
-		return true;
-	}
-
-	bool test() {
-		auto source = "/Volumes/Data/Users/ghansard/Desktop/deduction/library/deductionlib/deductionlib.hpp";
-		return parse(source);
+		return parse_result { items };
 	}
 }

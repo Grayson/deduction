@@ -10,5 +10,5 @@
 #include <deduction/deductionlib.hpp>
 
 TEST_CASE("simple enum", "[enum]") {
-	REQUIRE(deduction::parse("cases/enum.hpp"));
+	REQUIRE(!deduction::parse("cases/enum.hpp").items.empty());
 }
