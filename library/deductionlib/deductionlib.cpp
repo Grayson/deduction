@@ -8,6 +8,7 @@
 
 #include "deductionlib.hpp"
 #include <clang-c/Index.h>
+#include <functional>
 #include <iostream>
 #include <vector>
 #include <numeric>
@@ -33,7 +34,13 @@ namespace {
 		return CXChildVisit_Continue;
 	}
 
-	function map_to_function(CXCursor cursor) {
+	using lambda_visitor = std::function<CXChildVisitResult(CXCursor &)>;
+	CXChildVisitResult visit_lambda(CXCursor cursor, CXCursor parent, CXClientData client_data) {
+		auto lambda = *static_cast<lambda_visitor *>(client_data);
+		return lambda(cursor);
+	}
+
+	function map_to_function(CXCursor & cursor) {
 		std::vector<function::parameter> parameters;
 		clang_visitChildren(cursor, visit_parameters, &parameters);
 		auto type = clang_getCursorType(cursor);
