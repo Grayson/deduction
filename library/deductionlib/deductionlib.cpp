@@ -48,6 +48,40 @@ namespace {
 		return { get_name(cursor), qualify_name(cursor), parameters, map(clang_getTypeSpelling(resultType)) };
 	}
 
+	structure::field map_to_struct_field(CXCursor & cursor) {
+		return { get_name(cursor), get_type_name(cursor), clang_isConstQualifiedType(clang_getCursorType(cursor)) == 0 };
+	}
+
+	structure map_to_structure(CXCursor cursor) {
+		std::vector<structure::field> fields;
+		std::vector<function> methods;
+		bool isPrivate = false;
+		lambda_visitor test = [&](CXCursor & child) {
+			auto childKind = clang_getCursorKind(child);
+			switch(childKind) {
+			case CXCursor_FieldDecl: {
+				if (!isPrivate)
+					fields.emplace_back(map_to_struct_field(child));
+				return CXChildVisit_Continue;
+			}
+			case CXCursor_CXXMethod: {
+				if (!isPrivate)
+					methods.emplace_back(map_to_function(child));
+				return CXChildVisit_Continue;
+			}
+			case CXCursor_CXXAccessSpecifier: {
+				isPrivate = CX_CXXPublic != clang_getCXXAccessSpecifier(cursor);
+				return CXChildVisit_Continue;
+			}
+			default:
+				std::cerr << "Unhandled structure child kind: " << childKind << std::endl;
+				return CXChildVisit_Continue;
+			}
+		};
+		clang_visitChildren(cursor, visit_lambda, &test);
+		return { get_name(cursor), qualify_name(cursor), fields, methods };
+	}
+
 	CXChildVisitResult visit(CXCursor cursor, CXCursor parent, CXClientData client_data) {
 		auto items = reinterpret_cast<std::vector<parse_result::item_type> *>(client_data);
 
@@ -65,6 +99,10 @@ namespace {
 		}
 		case CXCursor_FunctionDecl: {
 			items->emplace_back(map_to_function(cursor));
+			return CXChildVisit_Continue;
+		}
+		case CXCursor_StructDecl: {
+			items->emplace_back(map_to_structure(cursor));
 			return CXChildVisit_Continue;
 		}
 		default:
