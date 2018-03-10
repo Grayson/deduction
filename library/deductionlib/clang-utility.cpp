@@ -56,4 +56,8 @@ namespace deduction::clang_utility {
 		});
 		return name;
 	}
+
+	std::string get_type_name(CXCursor & cursor) {
+		return map(clang_getTypeSpelling(clang_getCursorType(cursor)));
+	}
 }

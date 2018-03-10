@@ -18,4 +18,5 @@ namespace deduction::clang_utility {
 
 	std::string get_name(CXCursor & cursor);
 	std::string qualify_name(CXCursor & cursor);
+	std::string get_type_name(CXCursor & cursor);
 }
