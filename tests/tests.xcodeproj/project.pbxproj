@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		1D063DFF205231CF0067AB55 /* enum.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = enum.hpp; sourceTree = "<group>"; };
 		1D063E00205231FD0067AB55 /* enum_tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = enum_tests.cpp; path = tests/enum_tests.cpp; sourceTree = SOURCE_ROOT; };
+		1D063E142053813F0067AB55 /* enum-class.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "enum-class.hpp"; sourceTree = "<group>"; };
 		1D3FFF58204F851200CC49DF /* tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tests; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF5B204F851200CC49DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1D3FFF64204F854E00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				1D063DFF205231CF0067AB55 /* enum.hpp */,
+				1D063E142053813F0067AB55 /* enum-class.hpp */,
 			);
 			path = cases;
 			sourceTree = "<group>";
