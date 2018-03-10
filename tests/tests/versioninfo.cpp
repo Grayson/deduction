@@ -13,6 +13,3 @@ TEST_CASE("verify version info", "[info]") {
 	REQUIRE(deduction::version == "0.0.1");
 }
 
-TEST_CASE("do test", "[info]") {
-	REQUIRE(deduction::test() == true);
-}
