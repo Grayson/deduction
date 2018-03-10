@@ -30,6 +30,10 @@ namespace deduction::clang_utility {
 		}
 	}
 
+	std::string get_name(CXCursor & cursor) {
+		return map(clang_getCursorSpelling(cursor));
+	}
+
 	std::string qualify_name(CXCursor & cursor) {
 		auto canContinue = [](CXCursor const & tmp) {
 			auto kind = clang_getCursorKind(tmp);
