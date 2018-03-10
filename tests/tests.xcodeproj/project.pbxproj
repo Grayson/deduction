@@ -12,6 +12,7 @@
 		1D3FFF5C204F851200CC49DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF5B204F851200CC49DF /* main.cpp */; };
 		1D3FFF63204F854E00CC49DF /* libdeductionlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3FFF64204F854E00CC49DF /* libdeductionlib.a */; };
 		1D3FFF67204F85DC00CC49DF /* versioninfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF66204F85DC00CC49DF /* versioninfo.cpp */; };
+		1D5234CD20544E0300055CC2 /* enum-class.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D063E142053813F0067AB55 /* enum-class.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,6 +22,7 @@
 			dstPath = cases;
 			dstSubfolderSpec = 16;
 			files = (
+				1D5234CD20544E0300055CC2 /* enum-class.hpp in CopyFiles */,
 				1D063E022052326B0067AB55 /* enum.hpp in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

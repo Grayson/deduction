@@ -27,7 +27,7 @@ TEST_CASE("simple enum", "[enum]") {
 }
 
 TEST_CASE("enum class", "[enum]") {
-	auto const result = deduction::parse("cases/enum.hpp");
+	auto const result = deduction::parse("cases/enum-class.hpp");
 	REQUIRE(result.items.size() == 1);
 
 	auto const & en = mpark::get<deduction::enumeration>(result.items[0]);
