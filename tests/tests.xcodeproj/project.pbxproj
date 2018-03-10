@@ -15,6 +15,8 @@
 		1D5234CC20543F5500055CC2 /* function-tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5234CB20543F5500055CC2 /* function-tests.cpp */; };
 		1D5234CD20544E0300055CC2 /* enum-class.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D063E142053813F0067AB55 /* enum-class.hpp */; };
 		1D5234CE20544E0300055CC2 /* function.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D5234CA20543DE000055CC2 /* function.hpp */; };
+		1D5234D420545D2A00055CC2 /* struct.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D5234D320545CC200055CC2 /* struct.hpp */; };
+		1D5234D620545D3C00055CC2 /* struct-tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5234D520545D3C00055CC2 /* struct-tests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +26,7 @@
 			dstPath = cases;
 			dstSubfolderSpec = 16;
 			files = (
+				1D5234D420545D2A00055CC2 /* struct.hpp in CopyFiles */,
 				1D5234CD20544E0300055CC2 /* enum-class.hpp in CopyFiles */,
 				1D5234CE20544E0300055CC2 /* function.hpp in CopyFiles */,
 				1D063E022052326B0067AB55 /* enum.hpp in CopyFiles */,
@@ -43,6 +46,8 @@
 		1D3FFF66204F85DC00CC49DF /* versioninfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = versioninfo.cpp; sourceTree = "<group>"; };
 		1D5234CA20543DE000055CC2 /* function.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = function.hpp; sourceTree = "<group>"; };
 		1D5234CB20543F5500055CC2 /* function-tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "function-tests.cpp"; sourceTree = "<group>"; };
+		1D5234D320545CC200055CC2 /* struct.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = struct.hpp; sourceTree = "<group>"; };
+		1D5234D520545D3C00055CC2 /* struct-tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "struct-tests.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 				1D063DFF205231CF0067AB55 /* enum.hpp */,
 				1D063E142053813F0067AB55 /* enum-class.hpp */,
 				1D5234CA20543DE000055CC2 /* function.hpp */,
+				1D5234D320545CC200055CC2 /* struct.hpp */,
 			);
 			path = cases;
 			sourceTree = "<group>";
@@ -93,6 +99,7 @@
 				1D3FFF5B204F851200CC49DF /* main.cpp */,
 				1D3FFF66204F85DC00CC49DF /* versioninfo.cpp */,
 				1D5234CB20543F5500055CC2 /* function-tests.cpp */,
+				1D5234D520545D3C00055CC2 /* struct-tests.cpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3FFF67204F85DC00CC49DF /* versioninfo.cpp in Sources */,
+				1D5234D620545D3C00055CC2 /* struct-tests.cpp in Sources */,
 				1D5234CC20543F5500055CC2 /* function-tests.cpp in Sources */,
 				1D063E01205231FD0067AB55 /* enum_tests.cpp in Sources */,
 				1D3FFF5C204F851200CC49DF /* main.cpp in Sources */,
