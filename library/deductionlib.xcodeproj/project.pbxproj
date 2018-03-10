@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D063E05205363860067AB55 /* enumeration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D063E03205363860067AB55 /* enumeration.cpp */; };
 		1D063E06205363860067AB55 /* enumeration.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E04205363860067AB55 /* enumeration.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D063E09205366650067AB55 /* clang-utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D063E07205366650067AB55 /* clang-utility.cpp */; };
+		1D063E0A205366650067AB55 /* clang-utility.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E08205366650067AB55 /* clang-utility.hpp */; };
 		1D063E10205371850067AB55 /* parse-result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D063E0E205371850067AB55 /* parse-result.cpp */; };
 		1D063E11205371850067AB55 /* parse-result.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E0F205371850067AB55 /* parse-result.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D063E13205373E90067AB55 /* variant.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E12205373E80067AB55 /* variant.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +25,8 @@
 		1D063DFD20522BC00067AB55 /* language.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = language.hpp; sourceTree = "<group>"; };
 		1D063E03205363860067AB55 /* enumeration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enumeration.cpp; sourceTree = "<group>"; };
 		1D063E04205363860067AB55 /* enumeration.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = enumeration.hpp; sourceTree = "<group>"; };
+		1D063E07205366650067AB55 /* clang-utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "clang-utility.cpp"; sourceTree = "<group>"; };
+		1D063E08205366650067AB55 /* clang-utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "clang-utility.hpp"; sourceTree = "<group>"; };
 		1D063E0E205371850067AB55 /* parse-result.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "parse-result.cpp"; sourceTree = "<group>"; };
 		1D063E0F205371850067AB55 /* parse-result.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "parse-result.hpp"; sourceTree = "<group>"; };
 		1D063E12205373E80067AB55 /* variant.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = variant.hpp; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				1D063DFD20522BC00067AB55 /* language.hpp */,
 				1D063E03205363860067AB55 /* enumeration.cpp */,
 				1D063E04205363860067AB55 /* enumeration.hpp */,
+				1D063E07205366650067AB55 /* clang-utility.cpp */,
+				1D063E08205366650067AB55 /* clang-utility.hpp */,
 				1D063E0E205371850067AB55 /* parse-result.cpp */,
 				1D063E0F205371850067AB55 /* parse-result.hpp */,
 			);
@@ -90,6 +96,7 @@
 				1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */,
 				1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */,
 				1D3FFF6D2050B91F00CC49DF /* cursor.hpp in Headers */,
+				1D063E0A205366650067AB55 /* clang-utility.hpp in Headers */,
 				1D063E11205371850067AB55 /* parse-result.hpp in Headers */,
 				1D063E13205373E90067AB55 /* variant.hpp in Headers */,
 			);
@@ -152,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D063E09205366650067AB55 /* clang-utility.cpp in Sources */,
 				1D063E05205363860067AB55 /* enumeration.cpp in Sources */,
 				1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */,
 				1D063E10205371850067AB55 /* parse-result.cpp in Sources */,
