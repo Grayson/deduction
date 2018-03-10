@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D063E05205363860067AB55 /* enumeration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D063E03205363860067AB55 /* enumeration.cpp */; };
+		1D063E06205363860067AB55 /* enumeration.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E04205363860067AB55 /* enumeration.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D063E13205373E90067AB55 /* variant.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E12205373E80067AB55 /* variant.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF41204F845F00CC49DF /* deductionlib.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF45204F845F00CC49DF /* deductionlib.cpp */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		1D063DFD20522BC00067AB55 /* language.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = language.hpp; sourceTree = "<group>"; };
+		1D063E03205363860067AB55 /* enumeration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enumeration.cpp; sourceTree = "<group>"; };
+		1D063E04205363860067AB55 /* enumeration.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = enumeration.hpp; sourceTree = "<group>"; };
 		1D063E12205373E80067AB55 /* variant.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = variant.hpp; sourceTree = "<group>"; };
 		1D3FFF3E204F845F00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF41204F845F00CC49DF /* deductionlib.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deductionlib.hpp; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				1D3FFF6A2050B91F00CC49DF /* cursor.cpp */,
 				1D3FFF6B2050B91F00CC49DF /* cursor.hpp */,
 				1D063DFD20522BC00067AB55 /* language.hpp */,
+				1D063E03205363860067AB55 /* enumeration.cpp */,
+				1D063E04205363860067AB55 /* enumeration.hpp */,
 			);
 			path = deductionlib;
 			sourceTree = "<group>";
@@ -74,6 +80,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D063E06205363860067AB55 /* enumeration.hpp in Headers */,
 				1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */,
 				1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */,
 				1D3FFF6D2050B91F00CC49DF /* cursor.hpp in Headers */,
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D063E05205363860067AB55 /* enumeration.cpp in Sources */,
 				1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */,
 				1D3FFF6C2050B91F00CC49DF /* cursor.cpp in Sources */,
 			);
