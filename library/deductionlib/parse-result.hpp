@@ -10,11 +10,12 @@
 
 #include <vector>
 #include "variant.hpp"
+#include "function.hpp"
 #include "enumeration.hpp"
 
 namespace deduction {
 	struct parse_result {
-		using item_type = mpark::variant<enumeration>;
+		using item_type = mpark::variant<function, enumeration>;
 		parse_result() = default;
 		parse_result(std::vector<item_type> items)
 			: items { std::move(items) }
