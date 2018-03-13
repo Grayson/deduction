@@ -22,6 +22,11 @@ namespace {
 	using namespace deduction;
 	using namespace deduction::clang_utility;
 
+	enum class accessibility {
+		acc_private,
+		acc_public,
+	};
+
 	CXChildVisitResult visit_enum_cases(CXCursor cursor, CXCursor parent, CXClientData client_data) {
 		auto labels = reinterpret_cast<std::vector<enumeration::case_label> *>(client_data);
 		labels->emplace_back(get_name(cursor), qualify_name(cursor));
@@ -52,25 +57,27 @@ namespace {
 		return { get_name(cursor), get_type_name(cursor), clang_isConstQualifiedType(clang_getCursorType(cursor)) == 0 };
 	}
 
-	structure map_to_structure(CXCursor cursor) {
+	structure map_to_structure(CXCursor cursor, accessibility defaultAccessibility) {
 		std::vector<structure::field> fields;
 		std::vector<function> methods;
-		bool isPrivate = false;
+		auto currentAccessibility = defaultAccessibility;
 		lambda_visitor test = [&](CXCursor & child) {
 			auto childKind = clang_getCursorKind(child);
 			switch(childKind) {
 			case CXCursor_FieldDecl: {
-				if (!isPrivate)
+				if (currentAccessibility == accessibility::acc_public)
 					fields.emplace_back(map_to_struct_field(child));
 				return CXChildVisit_Continue;
 			}
 			case CXCursor_CXXMethod: {
-				if (!isPrivate)
+				if (currentAccessibility == accessibility::acc_public)
 					methods.emplace_back(map_to_function(child));
 				return CXChildVisit_Continue;
 			}
 			case CXCursor_CXXAccessSpecifier: {
-				isPrivate = CX_CXXPublic != clang_getCXXAccessSpecifier(cursor);
+				currentAccessibility = CX_CXXPublic == clang_getCXXAccessSpecifier(child)
+					? accessibility::acc_public
+					: accessibility::acc_private;
 				return CXChildVisit_Continue;
 			}
 			default:
@@ -91,6 +98,10 @@ namespace {
 
 		switch (wrapper.kind())
 		{
+		case CXCursor_ClassDecl: {
+			items->emplace_back(map_to_structure(cursor, accessibility::acc_private));
+			return CXChildVisit_Continue;
+		}
 		case CXCursor_EnumDecl: {
 			std::vector<enumeration::case_label> caseLabels;
 			clang_visitChildren(cursor, visit_enum_cases, &caseLabels);
@@ -102,7 +113,7 @@ namespace {
 			return CXChildVisit_Continue;
 		}
 		case CXCursor_StructDecl: {
-			items->emplace_back(map_to_structure(cursor));
+			items->emplace_back(map_to_structure(cursor, accessibility::acc_public));
 			return CXChildVisit_Continue;
 		}
 		default:
