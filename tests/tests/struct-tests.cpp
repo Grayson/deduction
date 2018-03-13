@@ -27,7 +27,7 @@ TEST_CASE("simple struct", "[struct]") {
 	REQUIRE(st.fields[1].type == "const int");
 	REQUIRE(st.fields[1].is_mutable == false);
 
-	REQUIRE(st.methods.size() == 1);
+	REQUIRE(st.methods.size() == 2);
 	REQUIRE(st.methods[0].name == "baz");
 	REQUIRE(st.methods[0].full_name == "foo::baz");
 	REQUIRE(st.methods[0].return_type == "double");
@@ -36,4 +36,9 @@ TEST_CASE("simple struct", "[struct]") {
 	REQUIRE(st.methods[0].parameters[0].type == "bool");
 	REQUIRE(st.methods[0].parameters[1].name == "quuz");
 	REQUIRE(st.methods[0].parameters[1].type == "void *");
+
+	REQUIRE(st.methods[1].name == "garply");
+	REQUIRE(st.methods[1].full_name == "foo::garply");
+	REQUIRE(st.methods[1].return_type == "bool");
+	REQUIRE(st.methods[1].parameters.size() == 0);
 }
