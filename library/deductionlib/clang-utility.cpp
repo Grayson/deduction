@@ -34,6 +34,14 @@ namespace deduction::clang_utility {
 		return map(clang_getCursorSpelling(cursor));
 	}
 
+	std::string get_name(CXType const & type) {
+		return map(clang_getTypeSpelling(type));
+	}
+
+	std::string get_name(CXType const && type) {
+		return get_name(type);
+	}
+
 	std::string qualify_name(CXCursor & cursor) {
 		auto canContinue = [](CXCursor const & tmp) {
 			auto kind = clang_getCursorKind(tmp);
@@ -58,6 +66,6 @@ namespace deduction::clang_utility {
 	}
 
 	std::string get_type_name(CXCursor & cursor) {
-		return map(clang_getTypeSpelling(clang_getCursorType(cursor)));
+		return get_name(clang_getCursorType(cursor));
 	}
 }

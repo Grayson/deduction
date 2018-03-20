@@ -17,6 +17,8 @@ namespace deduction::clang_utility {
 	deduction::language map(CXLanguageKind languageKind);
 
 	std::string get_name(CXCursor & cursor);
+	std::string get_name(CXType const & type);
+	std::string get_name(CXType const && type);
 	std::string qualify_name(CXCursor & cursor);
 	std::string get_type_name(CXCursor & cursor);
 }
