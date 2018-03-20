@@ -89,6 +89,13 @@ namespace {
 		return { get_name(cursor), qualify_name(cursor), fields, methods };
 	}
 
+	alias map_to_alias(CXCursor & cursor) {
+		auto type = clang_getCursorType(cursor);
+		std::string underlyingType = get_name(clang_getTypedefDeclUnderlyingType(cursor));
+		std::string typedefName = map(clang_getTypedefName(type));
+		return { std::move(typedefName), std::move(underlyingType) };
+	}
+
 	CXChildVisitResult visit(CXCursor cursor, CXCursor parent, CXClientData client_data) {
 		auto items = reinterpret_cast<std::vector<parse_result::item_type> *>(client_data);
 
@@ -114,6 +121,10 @@ namespace {
 		}
 		case CXCursor_StructDecl: {
 			items->emplace_back(map_to_structure(cursor, accessibility::acc_public));
+			return CXChildVisit_Continue;
+		}
+		case CXCursor_TypeAliasDecl: {
+			items->emplace_back(map_to_alias(cursor));
 			return CXChildVisit_Continue;
 		}
 		default:

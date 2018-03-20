@@ -23,6 +23,8 @@
 		1D5234D220544F2900055CC2 /* function.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D5234D020544F2900055CC2 /* function.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D5234D920545E2A00055CC2 /* structure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5234D720545E2A00055CC2 /* structure.cpp */; };
 		1D5234DA20545E2A00055CC2 /* structure.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D5234D820545E2A00055CC2 /* structure.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D5234E820575DD700055CC2 /* alias.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5234E620575DD700055CC2 /* alias.cpp */; };
+		1D5234E920575DD700055CC2 /* alias.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D5234E720575DD700055CC2 /* alias.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		1D5234D020544F2900055CC2 /* function.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = function.hpp; sourceTree = "<group>"; };
 		1D5234D720545E2A00055CC2 /* structure.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = structure.cpp; sourceTree = "<group>"; };
 		1D5234D820545E2A00055CC2 /* structure.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = structure.hpp; sourceTree = "<group>"; };
+		1D5234E620575DD700055CC2 /* alias.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = alias.cpp; sourceTree = "<group>"; };
+		1D5234E720575DD700055CC2 /* alias.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = alias.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				1D5234D020544F2900055CC2 /* function.hpp */,
 				1D5234D720545E2A00055CC2 /* structure.cpp */,
 				1D5234D820545E2A00055CC2 /* structure.hpp */,
+				1D5234E620575DD700055CC2 /* alias.cpp */,
+				1D5234E720575DD700055CC2 /* alias.hpp */,
 			);
 			path = deductionlib;
 			sourceTree = "<group>";
@@ -109,6 +115,7 @@
 				1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */,
 				1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */,
 				1D3FFF6D2050B91F00CC49DF /* cursor.hpp in Headers */,
+				1D5234E920575DD700055CC2 /* alias.hpp in Headers */,
 				1D063E0A205366650067AB55 /* clang-utility.hpp in Headers */,
 				1D063E11205371850067AB55 /* parse-result.hpp in Headers */,
 				1D063E13205373E90067AB55 /* variant.hpp in Headers */,
@@ -177,6 +184,7 @@
 				1D063E09205366650067AB55 /* clang-utility.cpp in Sources */,
 				1D063E05205363860067AB55 /* enumeration.cpp in Sources */,
 				1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */,
+				1D5234E820575DD700055CC2 /* alias.cpp in Sources */,
 				1D063E10205371850067AB55 /* parse-result.cpp in Sources */,
 				1D3FFF6C2050B91F00CC49DF /* cursor.cpp in Sources */,
 				1D5234D120544F2900055CC2 /* function.cpp in Sources */,
