@@ -19,6 +19,8 @@
 		1D5234DF2057567E00055CC2 /* class-tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5234DE2057567E00055CC2 /* class-tests.cpp */; };
 		1D5234E02057569D00055CC2 /* class.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D5234DC2057563800055CC2 /* class.hpp */; };
 		1D5234E120575A4A00055CC2 /* struct-tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5234D520545D3C00055CC2 /* struct-tests.cpp */; };
+		1D5234E320575C5C00055CC2 /* function-pointer.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D5234E220575BE400055CC2 /* function-pointer.hpp */; };
+		1D5234E520575C6F00055CC2 /* function-pointer-tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5234E420575C6F00055CC2 /* function-pointer-tests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,7 @@
 			dstPath = cases;
 			dstSubfolderSpec = 16;
 			files = (
+				1D5234E320575C5C00055CC2 /* function-pointer.hpp in CopyFiles */,
 				1D5234E02057569D00055CC2 /* class.hpp in CopyFiles */,
 				1D5234D420545D2A00055CC2 /* struct.hpp in CopyFiles */,
 				1D5234CD20544E0300055CC2 /* enum-class.hpp in CopyFiles */,
@@ -53,6 +56,8 @@
 		1D5234D520545D3C00055CC2 /* struct-tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "struct-tests.cpp"; sourceTree = "<group>"; };
 		1D5234DC2057563800055CC2 /* class.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = class.hpp; sourceTree = "<group>"; };
 		1D5234DE2057567E00055CC2 /* class-tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "class-tests.cpp"; sourceTree = "<group>"; };
+		1D5234E220575BE400055CC2 /* function-pointer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "function-pointer.hpp"; sourceTree = "<group>"; };
+		1D5234E420575C6F00055CC2 /* function-pointer-tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "function-pointer-tests.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 				1D5234CA20543DE000055CC2 /* function.hpp */,
 				1D5234D320545CC200055CC2 /* struct.hpp */,
 				1D5234DC2057563800055CC2 /* class.hpp */,
+				1D5234E220575BE400055CC2 /* function-pointer.hpp */,
 			);
 			path = cases;
 			sourceTree = "<group>";
@@ -107,6 +113,7 @@
 				1D5234CB20543F5500055CC2 /* function-tests.cpp */,
 				1D5234D520545D3C00055CC2 /* struct-tests.cpp */,
 				1D5234DE2057567E00055CC2 /* class-tests.cpp */,
+				1D5234E420575C6F00055CC2 /* function-pointer-tests.cpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 				1D5234CC20543F5500055CC2 /* function-tests.cpp in Sources */,
 				1D5234E120575A4A00055CC2 /* struct-tests.cpp in Sources */,
 				1D063E01205231FD0067AB55 /* enum_tests.cpp in Sources */,
+				1D5234E520575C6F00055CC2 /* function-pointer-tests.cpp in Sources */,
 				1D5234DF2057567E00055CC2 /* class-tests.cpp in Sources */,
 				1D3FFF5C204F851200CC49DF /* main.cpp in Sources */,
 			);
