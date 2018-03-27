@@ -11,6 +11,7 @@
 		1D3461AD2069E292009D26B8 /* deductionjson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3461AC2069E292009D26B8 /* deductionjson.cpp */; };
 		1D3461B42069E34C009D26B8 /* libdeductionlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3461B52069E34C009D26B8 /* libdeductionlib.a */; };
 		1D3461B72069E490009D26B8 /* json.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3461B62069E48F009D26B8 /* json.hpp */; };
+		1D3461B92069E51A009D26B8 /* enumeration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3461B82069E51A009D26B8 /* enumeration.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1D3461AC2069E292009D26B8 /* deductionjson.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deductionjson.cpp; sourceTree = "<group>"; };
 		1D3461B52069E34C009D26B8 /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3461B62069E48F009D26B8 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
+		1D3461B82069E51A009D26B8 /* enumeration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enumeration.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				1D3461B62069E48F009D26B8 /* json.hpp */,
 				1D3461A82069E292009D26B8 /* deductionjson.hpp */,
 				1D3461AC2069E292009D26B8 /* deductionjson.cpp */,
+				1D3461B82069E51A009D26B8 /* enumeration.cpp */,
 			);
 			path = deductionjson;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3461AD2069E292009D26B8 /* deductionjson.cpp in Sources */,
+				1D3461B92069E51A009D26B8 /* enumeration.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
