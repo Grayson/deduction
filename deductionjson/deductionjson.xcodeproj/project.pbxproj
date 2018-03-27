@@ -7,138 +7,144 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3FFF2F204F837900CC49DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF2E204F837900CC49DF /* main.cpp */; };
-		1D3FFF4D204F84BF00CC49DF /* libdeductionlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3FFF4E204F84BF00CC49DF /* libdeductionlib.a */; };
+		1D3461A92069E292009D26B8 /* deductionjson.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3461A82069E292009D26B8 /* deductionjson.hpp */; };
+		1D3461AD2069E292009D26B8 /* deductionjson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3461AC2069E292009D26B8 /* deductionjson.cpp */; };
+		1D3461B42069E34C009D26B8 /* libdeductionlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3461B52069E34C009D26B8 /* libdeductionlib.a */; };
+		1D3461B72069E490009D26B8 /* json.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3461B62069E48F009D26B8 /* json.hpp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1D3FFF29204F837900CC49DF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		1D3FFF2B204F837900CC49DF /* deduction */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = deduction; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D3FFF2E204F837900CC49DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		1D3FFF4E204F84BF00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3461A52069E292009D26B8 /* libdeductionjson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdeductionjson.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3461A82069E292009D26B8 /* deductionjson.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deductionjson.hpp; sourceTree = "<group>"; };
+		1D3461AC2069E292009D26B8 /* deductionjson.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deductionjson.cpp; sourceTree = "<group>"; };
+		1D3461B52069E34C009D26B8 /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3461B62069E48F009D26B8 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D3FFF28204F837900CC49DF /* Frameworks */ = {
+		1D3461A22069E292009D26B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D3FFF4D204F84BF00CC49DF /* libdeductionlib.a in Frameworks */,
+				1D3461B42069E34C009D26B8 /* libdeductionlib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D3FFF22204F837900CC49DF = {
+		1D34619C2069E292009D26B8 = {
 			isa = PBXGroup;
 			children = (
-				1D3FFF2D204F837900CC49DF /* deduction */,
-				1D3FFF2C204F837900CC49DF /* Products */,
-				1D3FFF4C204F84BF00CC49DF /* Frameworks */,
+				1D3461A72069E292009D26B8 /* deductionjson */,
+				1D3461A62069E292009D26B8 /* Products */,
+				1D3461B32069E34C009D26B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		1D3FFF2C204F837900CC49DF /* Products */ = {
+		1D3461A62069E292009D26B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D3FFF2B204F837900CC49DF /* deduction */,
+				1D3461A52069E292009D26B8 /* libdeductionjson.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D3FFF2D204F837900CC49DF /* deduction */ = {
+		1D3461A72069E292009D26B8 /* deductionjson */ = {
 			isa = PBXGroup;
 			children = (
-				1D3FFF2E204F837900CC49DF /* main.cpp */,
+				1D3461B62069E48F009D26B8 /* json.hpp */,
+				1D3461A82069E292009D26B8 /* deductionjson.hpp */,
+				1D3461AC2069E292009D26B8 /* deductionjson.cpp */,
 			);
-			path = deduction;
+			path = deductionjson;
 			sourceTree = "<group>";
 		};
-		1D3FFF4C204F84BF00CC49DF /* Frameworks */ = {
+		1D3461B32069E34C009D26B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D3FFF4E204F84BF00CC49DF /* libdeductionlib.a */,
+				1D3461B52069E34C009D26B8 /* libdeductionlib.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1D3461A32069E292009D26B8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D3461B72069E490009D26B8 /* json.hpp in Headers */,
+				1D3461A92069E292009D26B8 /* deductionjson.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		1D3FFF2A204F837900CC49DF /* deduction */ = {
+		1D3461A42069E292009D26B8 /* deductionjson */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D3FFF32204F837900CC49DF /* Build configuration list for PBXNativeTarget "deduction" */;
+			buildConfigurationList = 1D3461B02069E292009D26B8 /* Build configuration list for PBXNativeTarget "deductionjson" */;
 			buildPhases = (
-				1D3FFF27204F837900CC49DF /* Sources */,
-				1D3FFF28204F837900CC49DF /* Frameworks */,
-				1D3FFF29204F837900CC49DF /* CopyFiles */,
+				1D3461A12069E292009D26B8 /* Sources */,
+				1D3461A22069E292009D26B8 /* Frameworks */,
+				1D3461A32069E292009D26B8 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = deduction;
-			productName = deduction;
-			productReference = 1D3FFF2B204F837900CC49DF /* deduction */;
-			productType = "com.apple.product-type.tool";
+			name = deductionjson;
+			productName = deductionjson;
+			productReference = 1D3461A52069E292009D26B8 /* libdeductionjson.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1D3FFF23204F837900CC49DF /* Project object */ = {
+		1D34619D2069E292009D26B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "From Concentrate Software";
 				TargetAttributes = {
-					1D3FFF2A204F837900CC49DF = {
+					1D3461A42069E292009D26B8 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 1D3FFF26204F837900CC49DF /* Build configuration list for PBXProject "deduction" */;
+			buildConfigurationList = 1D3461A02069E292009D26B8 /* Build configuration list for PBXProject "deductionjson" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1D3FFF22204F837900CC49DF;
-			productRefGroup = 1D3FFF2C204F837900CC49DF /* Products */;
+			mainGroup = 1D34619C2069E292009D26B8;
+			productRefGroup = 1D3461A62069E292009D26B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D3FFF2A204F837900CC49DF /* deduction */,
+				1D3461A42069E292009D26B8 /* deductionjson */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D3FFF27204F837900CC49DF /* Sources */ = {
+		1D3461A12069E292009D26B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D3FFF2F204F837900CC49DF /* main.cpp in Sources */,
+				1D3461AD2069E292009D26B8 /* deductionjson.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1D3FFF30204F837900CC49DF /* Debug */ = {
+		1D3461AE2069E292009D26B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -193,7 +199,7 @@
 			};
 			name = Debug;
 		};
-		1D3FFF31204F837900CC49DF /* Release */ = {
+		1D3461AF2069E292009D26B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -241,22 +247,28 @@
 			};
 			name = Release;
 		};
-		1D3FFF33204F837900CC49DF /* Debug */ = {
+		1D3461B12069E292009D26B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8Z8N96C99;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		1D3FFF34204F837900CC49DF /* Release */ = {
+		1D3461B22069E292009D26B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8Z8N96C99;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -264,25 +276,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D3FFF26204F837900CC49DF /* Build configuration list for PBXProject "deduction" */ = {
+		1D3461A02069E292009D26B8 /* Build configuration list for PBXProject "deductionjson" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D3FFF30204F837900CC49DF /* Debug */,
-				1D3FFF31204F837900CC49DF /* Release */,
+				1D3461AE2069E292009D26B8 /* Debug */,
+				1D3461AF2069E292009D26B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D3FFF32204F837900CC49DF /* Build configuration list for PBXNativeTarget "deduction" */ = {
+		1D3461B02069E292009D26B8 /* Build configuration list for PBXNativeTarget "deductionjson" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D3FFF33204F837900CC49DF /* Debug */,
-				1D3FFF34204F837900CC49DF /* Release */,
+				1D3461B12069E292009D26B8 /* Debug */,
+				1D3461B22069E292009D26B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1D3FFF23204F837900CC49DF /* Project object */;
+	rootObject = 1D34619D2069E292009D26B8 /* Project object */;
 }
