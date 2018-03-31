@@ -28,20 +28,35 @@ namespace {
 		json operator()(const deduction::variable & var) const { return var; }
 	};
 
+	std::vector<json> map(const deduction::parse_result & result) {
+		auto visitor = item_visitor {};
+		auto itemsInJsonFormat = std::vector<json> {};
+		std::transform(std::begin(result.items), std::end(result.items), std::back_inserter(itemsInJsonFormat), [&](const auto & x) { return mpark::visit(visitor, x); });
+		return itemsInJsonFormat;
+	}
+
 	static char const * const ItemsLabel = "items";
+	static char const * const FilePathLabel = "filepath";
 }
 
 namespace deduction {
 	std::string convert_parsed_result_to_json(const parse_result result) {
-		auto visitor = item_visitor {};
-		auto itemsInJsonFormat = std::vector<json> {};
-		for (const auto & item : result.items) {
-			itemsInJsonFormat.emplace_back(mpark::visit(visitor, item));
-		}
-
 		auto j = json {
-			{ ItemsLabel, itemsInJsonFormat },
+			{ ItemsLabel, map(result) },
 		};
 		return j.dump();
+	}
+
+	std::string convert_header_to_json(const std::string & headerPath, json_conversion_options const options) {
+		auto const result = parse(headerPath);
+		auto j = json {
+			{ ItemsLabel, map(result) },
+		};
+
+		if (has_option(options, json_conversion_options::include_file_info))
+			j[FilePathLabel] = headerPath;
+
+		auto const tabSize = has_option(options, json_conversion_options::pretty_print) ? 4 : 0;
+		return j.dump(tabSize);
 	}
 }
