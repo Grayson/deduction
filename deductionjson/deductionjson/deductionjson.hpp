@@ -8,7 +8,9 @@
 
 #pragma once
 
+#include <string>
 #include <deduction/deductionlib.hpp>
-#include <deduction/variant.hpp>
 
-
+namespace deduction {
+	std::string convert_parsed_result_to_json(const parse_result result);
+}
