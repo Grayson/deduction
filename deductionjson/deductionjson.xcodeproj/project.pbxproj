@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D0B809E206FF8FF00E3D5B8 /* json_conversion_options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B809C206FF8FF00E3D5B8 /* json_conversion_options.cpp */; };
-		1D0B809F206FF8FF00E3D5B8 /* json_conversion_options.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D0B809D206FF8FF00E3D5B8 /* json_conversion_options.hpp */; };
-		1D3461A92069E292009D26B8 /* deductionjson.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3461A82069E292009D26B8 /* deductionjson.hpp */; };
+		1D0B809F206FF8FF00E3D5B8 /* json_conversion_options.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D0B809D206FF8FF00E3D5B8 /* json_conversion_options.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D3461A92069E292009D26B8 /* deductionjson.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3461A82069E292009D26B8 /* deductionjson.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3461AD2069E292009D26B8 /* deductionjson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3461AC2069E292009D26B8 /* deductionjson.cpp */; };
 		1D3461B42069E34C009D26B8 /* libdeductionlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3461B52069E34C009D26B8 /* libdeductionlib.a */; };
 		1D3461B72069E490009D26B8 /* json.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3461B62069E48F009D26B8 /* json.hpp */; };
