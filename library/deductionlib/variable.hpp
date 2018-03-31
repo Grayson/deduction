@@ -13,16 +13,18 @@
 namespace deduction {
 	struct variable {
 		variable() = default;
-		variable(std::string name, std::string type, bool isMutable, bool isExtern)
+		variable(std::string name, std::string type, std::string typeWithoutQualifiers, bool isMutable, bool isExtern)
 			: name { std::move(name) }
 			, type { std::move(type) }
+			, type_without_qualifiers { std::move(typeWithoutQualifiers) }
 			, is_mutable { isMutable }
-			, is_extern { isExtern} 
+			, is_extern { isExtern}
 		{
 		}
 
 		std::string name;
 		std::string type;
+		std::string type_without_qualifiers;
 		bool is_mutable;
 		bool is_extern;
 	};

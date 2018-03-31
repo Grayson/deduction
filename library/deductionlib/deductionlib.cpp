@@ -97,9 +97,12 @@ namespace {
 	}
 
 	variable map_to_variable(CXCursor & cursor) {
+		auto const type = get_type_name(cursor);
+		auto const typeWithoutModifiers = remove_type_qualifiers(type);
 		return {
 			get_name(cursor),
-			get_type_name(cursor),
+			std::move(type),
+			std::move(typeWithoutModifiers),
 			clang_isConstQualifiedType(clang_getCursorType(cursor)) == 0,
 			clang_getCursorLinkage(cursor) == CXLinkage_External
 		};
