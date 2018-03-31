@@ -68,4 +68,33 @@ namespace deduction::clang_utility {
 	std::string get_type_name(CXCursor & cursor) {
 		return get_name(clang_getCursorType(cursor));
 	}
+
+	std::string remove_type_qualifiers(std::string typeString) {
+		auto strip = [&](const std::string & needle) {
+			auto position = typeString.find(needle);
+			if (position == std::string::npos)
+				return false;
+
+			typeString.erase(position, needle.length());
+			return true;
+		};
+
+		while(strip("const") || strip("violatile"))
+			; /* Strip keywords */
+
+		while(strip("  "))
+			; /* Strip out any double-spaces */
+
+		if (*std::begin(typeString) == ' ')
+			typeString.erase(std::begin(typeString));
+
+		if (typeString.size() != 0)
+		{
+			auto const iter = std::prev(std::end(typeString));
+			if (*iter == ' ')
+				typeString.erase(iter);
+		}
+
+		return typeString;
+	}
 }

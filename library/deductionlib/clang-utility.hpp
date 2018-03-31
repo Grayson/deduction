@@ -21,4 +21,6 @@ namespace deduction::clang_utility {
 	std::string get_name(CXType const && type);
 	std::string qualify_name(CXCursor & cursor);
 	std::string get_type_name(CXCursor & cursor);
+
+	std::string remove_type_qualifiers(std::string typeString);
 }
