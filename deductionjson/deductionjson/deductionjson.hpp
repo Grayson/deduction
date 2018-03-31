@@ -14,5 +14,5 @@
 
 namespace deduction {
 	std::string convert_parsed_result_to_json(const parse_result result);
-	std::string convert_header_to_json(const std::string & headerPath, json_conversion_options const options);
+	std::string convert_header_to_json(const std::string & headerPath, json_conversion_options const options = json_conversion_options::none);
 }
