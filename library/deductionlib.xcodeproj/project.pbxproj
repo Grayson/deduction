@@ -14,6 +14,7 @@
 		1D063E10205371850067AB55 /* parse-result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D063E0E205371850067AB55 /* parse-result.cpp */; };
 		1D063E11205371850067AB55 /* parse-result.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E0F205371850067AB55 /* parse-result.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D063E13205373E90067AB55 /* variant.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D063E12205373E80067AB55 /* variant.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D3461BF206FB8C2009D26B8 /* variable.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3461BE206FB8C2009D26B8 /* variable.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3FFF42204F845F00CC49DF /* deductionlib.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF41204F845F00CC49DF /* deductionlib.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3FFF46204F845F00CC49DF /* deductionlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF45204F845F00CC49DF /* deductionlib.cpp */; };
 		1D3FFF69204F8A7900CC49DF /* utility.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1D3FFF68204F86E600CC49DF /* utility.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +37,7 @@
 		1D063E0E205371850067AB55 /* parse-result.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "parse-result.cpp"; sourceTree = "<group>"; };
 		1D063E0F205371850067AB55 /* parse-result.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "parse-result.hpp"; sourceTree = "<group>"; };
 		1D063E12205373E80067AB55 /* variant.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = variant.hpp; sourceTree = "<group>"; };
+		1D3461BE206FB8C2009D26B8 /* variable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = variable.hpp; sourceTree = "<group>"; };
 		1D3FFF3E204F845F00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF41204F845F00CC49DF /* deductionlib.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deductionlib.hpp; sourceTree = "<group>"; };
 		1D3FFF45204F845F00CC49DF /* deductionlib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deductionlib.cpp; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				1D5234D820545E2A00055CC2 /* structure.hpp */,
 				1D5234E620575DD700055CC2 /* alias.cpp */,
 				1D5234E720575DD700055CC2 /* alias.hpp */,
+				1D3461BE206FB8C2009D26B8 /* variable.hpp */,
 			);
 			path = deductionlib;
 			sourceTree = "<group>";
@@ -117,6 +120,7 @@
 				1D3FFF6D2050B91F00CC49DF /* cursor.hpp in Headers */,
 				1D5234E920575DD700055CC2 /* alias.hpp in Headers */,
 				1D063E0A205366650067AB55 /* clang-utility.hpp in Headers */,
+				1D3461BF206FB8C2009D26B8 /* variable.hpp in Headers */,
 				1D063E11205371850067AB55 /* parse-result.hpp in Headers */,
 				1D063E13205373E90067AB55 /* variant.hpp in Headers */,
 				1D5234DA20545E2A00055CC2 /* structure.hpp in Headers */,

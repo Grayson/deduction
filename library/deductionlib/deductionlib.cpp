@@ -96,6 +96,10 @@ namespace {
 		return { std::move(typedefName), std::move(underlyingType) };
 	}
 
+	variable map_to_variable(CXCursor & cursor) {
+		return { get_name(cursor), get_type_name(cursor), clang_isConstQualifiedType(clang_getCursorType(cursor)) == 0 };
+	}
+
 	CXChildVisitResult visit(CXCursor cursor, CXCursor parent, CXClientData client_data) {
 		auto items = reinterpret_cast<std::vector<parse_result::item_type> *>(client_data);
 
@@ -126,6 +130,13 @@ namespace {
 		case CXCursor_TypeAliasDecl: {
 			items->emplace_back(map_to_alias(cursor));
 			return CXChildVisit_Continue;
+		}
+		case CXCursor_VarDecl: {
+			items->emplace_back(map_to_variable(cursor));
+			return CXChildVisit_Continue;
+		}
+		case CXCursor_Namespace: {
+			return CXChildVisit_Recurse;
 		}
 		default:
 			std::cerr << "Unhandled cursor kind: " << wrapper.kind() << " (" << wrapper.type_name() << ")" << std::endl;
