@@ -97,7 +97,12 @@ namespace {
 	}
 
 	variable map_to_variable(CXCursor & cursor) {
-		return { get_name(cursor), get_type_name(cursor), clang_isConstQualifiedType(clang_getCursorType(cursor)) == 0 };
+		return {
+			get_name(cursor),
+			get_type_name(cursor),
+			clang_isConstQualifiedType(clang_getCursorType(cursor)) == 0,
+			clang_getCursorLinkage(cursor) == CXLinkage_External
+		};
 	}
 
 	CXChildVisitResult visit(CXCursor cursor, CXCursor parent, CXClientData client_data) {
