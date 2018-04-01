@@ -40,7 +40,7 @@ namespace {
 }
 
 namespace deduction {
-	std::string convert_parsed_result_to_json(const parse_result result) {
+	std::string convert_parsed_result_to_json(const parse_result & result) {
 		auto j = json {
 			{ ItemsLabel, map(result) },
 		};
