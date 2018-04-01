@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0B80A4207161FD00E3D5B8 /* libdeductionjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B80A5207161FD00E3D5B8 /* libdeductionjson.a */; };
 		1D3FFF2F204F837900CC49DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF2E204F837900CC49DF /* main.cpp */; };
 		1D3FFF4D204F84BF00CC49DF /* libdeductionlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3FFF4E204F84BF00CC49DF /* libdeductionlib.a */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D0B80A5207161FD00E3D5B8 /* libdeductionjson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionjson.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF2B204F837900CC49DF /* deduction */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = deduction; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3FFF2E204F837900CC49DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1D3FFF4E204F84BF00CC49DF /* libdeductionlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0B80A4207161FD00E3D5B8 /* libdeductionjson.a in Frameworks */,
 				1D3FFF4D204F84BF00CC49DF /* libdeductionlib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +72,7 @@
 		1D3FFF4C204F84BF00CC49DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D0B80A5207161FD00E3D5B8 /* libdeductionjson.a */,
 				1D3FFF4E204F84BF00CC49DF /* libdeductionlib.a */,
 			);
 			name = Frameworks;
@@ -247,6 +251,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8Z8N96C99;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include/";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/llvm/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -257,6 +263,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8Z8N96C99;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include/";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/llvm/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
