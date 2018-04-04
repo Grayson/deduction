@@ -12,6 +12,8 @@
 #include "json.hpp"
 
 namespace deduction {
+	extern char const * const FunctionReturnTypeLabel;
+
 	void to_json(nlohmann::json & j, const function::parameter & parameter);
 	void from_json(const nlohmann::json & j, function::parameter & parameter);
 

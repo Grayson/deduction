@@ -16,10 +16,11 @@
 namespace deduction {
 	using nlohmann::json;
 
+	char const * const FunctionReturnTypeLabel = "return_type";
+
 	static char const * const NameLabel = "name";
 	static char const * const FullNameLabel = "full_name";
 	static char const * const ParametersLabel = "parameters";
-	static char const * const ReturnTypeLabel = "return_type";
 	static char const * const TypeLabel = "type";
 	static char const * const ObjectTypeLabel = "_type";
 	static char const * const ObjectTypeValue = "function";
@@ -41,8 +42,7 @@ namespace deduction {
 			{ NameLabel, function.name },
 			{ FullNameLabel, function.full_name },
 			{ ParametersLabel, function.parameters },
-			{ ReturnTypeLabel, function.return_type },
-			{ TypeLabel, function.return_type },
+			{ FunctionReturnTypeLabel, function.return_type },
 			{ ObjectTypeLabel, ObjectTypeValue },
 		};
 	}
@@ -51,6 +51,6 @@ namespace deduction {
 		function.name = j.at(NameLabel).get<std::string>();
 		function.full_name = j.at(FullNameLabel).get<std::string>();
 		function.parameters = j.at(ParametersLabel).get<std::vector<function::parameter>>();
-		function.return_type = j.at(ReturnTypeLabel).get<std::string>();
+		function.return_type = j.at(FunctionReturnTypeLabel).get<std::string>();
 	}
 }
