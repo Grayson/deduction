@@ -15,11 +15,14 @@ namespace deduction {
 	static char const * const NameLabel = "name";
 	static char const * const FullNameLabel = "full_name";
 	static char const * const CasesLabel = "cases";
+	static char const * const ObjectTypeLabel = "_type";
+	static char const * const ObjectTypeValue = "enumeration";
 
 	void to_json(json & j, const enumeration::case_label & label) {
 		j = json {
 			{ NameLabel, label.name },
-			{ FullNameLabel, label.full_name }
+			{ FullNameLabel, label.full_name },
+			{ ObjectTypeLabel, ObjectTypeValue },
 		};
 	}
 

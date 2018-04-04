@@ -13,11 +13,15 @@ namespace deduction {
 
 	static char const * const NameLabel = "name";
 	static char const * const UnderlyingTypeLabel = "underlying_type";
+	static char const * const ObjectTypeLabel = "_type";
+	static char const * const ObjectTypeValue = "alias";
+
 
 	void to_json(json & j, const alias & alias) {
 		j = json {
 			{ NameLabel, alias.name },
 			{ UnderlyingTypeLabel, alias.underlying_type },
+			{ ObjectTypeLabel, ObjectTypeValue },
 		};
 	}
 
