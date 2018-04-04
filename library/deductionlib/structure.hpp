@@ -28,16 +28,18 @@ namespace deduction {
 		};
 
 		structure() = default;
-		structure(std::string name, std::string fullName, std::vector<field> fields, std::vector<function> methods)
+		structure(std::string name, std::string fullName, std::vector<field> fields, std::vector<function> methods, std::vector<function> constructors)
 			: name { std::move(name) }
 			, full_name { std::move(fullName) }
 			, fields { std::move(fields) }
 			, methods { std::move(methods) }
+			, constructors { std::move(constructors) }
 		{}
 
 		std::string name;
 		std::string full_name;
 		std::vector<field> fields;
 		std::vector<function> methods;
+		std::vector<function> constructors;
 	};
 }

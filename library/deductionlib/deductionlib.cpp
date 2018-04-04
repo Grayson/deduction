@@ -60,7 +60,9 @@ namespace {
 	structure map_to_structure(CXCursor cursor, accessibility defaultAccessibility) {
 		std::vector<structure::field> fields;
 		std::vector<function> methods;
+		std::vector<function> constructors;
 		auto currentAccessibility = defaultAccessibility;
+
 		lambda_visitor test = [&](CXCursor & child) {
 			auto childKind = clang_getCursorKind(child);
 			switch(childKind) {
@@ -80,13 +82,23 @@ namespace {
 					: accessibility::acc_private;
 				return CXChildVisit_Continue;
 			}
+			case CXCursor_Constructor: {
+				if (currentAccessibility == accessibility::acc_public)
+					constructors.emplace_back(map_to_function(child));
+				return CXChildVisit_Continue;
+			}
+			case CXCursor_Destructor: {
+				// Although theoretically possible to delete the destructor,
+				// that's considered unwise.
+				return CXChildVisit_Continue;
+			}
 			default:
 				std::cerr << "Unhandled structure child kind: " << childKind << std::endl;
 				return CXChildVisit_Continue;
 			}
 		};
 		clang_visitChildren(cursor, visit_lambda, &test);
-		return { get_name(cursor), qualify_name(cursor), fields, methods };
+		return { get_name(cursor), qualify_name(cursor), std::move(fields), std::move(methods), std::move(constructors) };
 	}
 
 	alias map_to_alias(CXCursor & cursor) {
