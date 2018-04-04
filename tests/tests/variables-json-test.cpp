@@ -12,6 +12,7 @@
 char const * const JsonExpectation = R"test({
 "items": [
 {
+"_type": "variable",
 "is_extern": true,
 "is_mutable": false,
 "name": "foo",
@@ -19,6 +20,7 @@ char const * const JsonExpectation = R"test({
 "type_without_qualifiers": "int"
 },
 {
+"_type": "variable",
 "is_extern": true,
 "is_mutable": true,
 "name": "bar",

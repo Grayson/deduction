@@ -41,4 +41,26 @@ TEST_CASE("simple struct", "[struct]") {
 	REQUIRE(st.methods[1].full_name == "foo::garply");
 	REQUIRE(st.methods[1].return_type == "bool");
 	REQUIRE(st.methods[1].parameters.size() == 0);
+
+	REQUIRE(st.constructors.size() == 2);
+	REQUIRE(st.constructors[0].name == "foo");
+	REQUIRE(st.constructors[0].name == st.constructors[1].name);
+	REQUIRE(st.constructors[0].full_name == "foo::foo");
+	REQUIRE(st.constructors[0].full_name == st.constructors[1].full_name);
+	REQUIRE(st.constructors[0].parameters.size() == 0);
+	REQUIRE(st.constructors[1].parameters.size() == 1);
+	REQUIRE(st.constructors[1].parameters[0].name == "grault");
+	REQUIRE(st.constructors[1].parameters[0].type == "int");
+}
+
+TEST_CASE("namespaced struct", "[struct]") {
+	auto const result = deduction::parse("cases/namespaced-struct.hpp");
+	auto & st = mpark::get<deduction::structure>(result.items[0]);
+
+	REQUIRE(st.name == "foo");
+	REQUIRE(st.full_name == "tests::foo");
+	REQUIRE(st.fields.size() == 1);
+	REQUIRE(st.fields[0].name == "bar");
+	REQUIRE(st.fields[0].type == "int");
+	REQUIRE(st.fields[0].is_mutable == true);
 }

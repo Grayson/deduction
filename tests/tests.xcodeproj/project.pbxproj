@@ -11,6 +11,8 @@
 		1D063E022052326B0067AB55 /* enum.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D063DFF205231CF0067AB55 /* enum.hpp */; };
 		1D0B80A1207048E200E3D5B8 /* variables-json-test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B80A0207048E200E3D5B8 /* variables-json-test.cpp */; };
 		1D0B80A220704B1300E3D5B8 /* libdeductionjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B80A320704B1300E3D5B8 /* libdeductionjson.a */; };
+		1D0B80A72073AFE000E3D5B8 /* struct-json-test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B80A62073AFE000E3D5B8 /* struct-json-test.cpp */; };
+		1D0B80A92074145C00E3D5B8 /* namespaced-struct.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D0B80A82074136E00E3D5B8 /* namespaced-struct.hpp */; };
 		1D3461BC206FB760009D26B8 /* variables-tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3461BB206FB760009D26B8 /* variables-tests.cpp */; };
 		1D3461BD206FB77F009D26B8 /* variables.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D3461BA206FB718009D26B8 /* variables.hpp */; };
 		1D3FFF5C204F851200CC49DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FFF5B204F851200CC49DF /* main.cpp */; };
@@ -34,6 +36,7 @@
 			dstPath = cases;
 			dstSubfolderSpec = 16;
 			files = (
+				1D0B80A92074145C00E3D5B8 /* namespaced-struct.hpp in CopyFiles */,
 				1D3461BD206FB77F009D26B8 /* variables.hpp in CopyFiles */,
 				1D5234E320575C5C00055CC2 /* function-pointer.hpp in CopyFiles */,
 				1D5234E02057569D00055CC2 /* class.hpp in CopyFiles */,
@@ -52,6 +55,8 @@
 		1D063E142053813F0067AB55 /* enum-class.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "enum-class.hpp"; sourceTree = "<group>"; };
 		1D0B80A0207048E200E3D5B8 /* variables-json-test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "variables-json-test.cpp"; sourceTree = "<group>"; };
 		1D0B80A320704B1300E3D5B8 /* libdeductionjson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdeductionjson.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0B80A62073AFE000E3D5B8 /* struct-json-test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "struct-json-test.cpp"; sourceTree = "<group>"; };
+		1D0B80A82074136E00E3D5B8 /* namespaced-struct.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "namespaced-struct.hpp"; sourceTree = "<group>"; };
 		1D3461BA206FB718009D26B8 /* variables.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = variables.hpp; sourceTree = "<group>"; };
 		1D3461BB206FB760009D26B8 /* variables-tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "variables-tests.cpp"; sourceTree = "<group>"; };
 		1D3FFF58204F851200CC49DF /* tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tests; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +97,7 @@
 				1D5234DC2057563800055CC2 /* class.hpp */,
 				1D5234E220575BE400055CC2 /* function-pointer.hpp */,
 				1D3461BA206FB718009D26B8 /* variables.hpp */,
+				1D0B80A82074136E00E3D5B8 /* namespaced-struct.hpp */,
 			);
 			path = cases;
 			sourceTree = "<group>";
@@ -127,6 +133,7 @@
 				1D5234E420575C6F00055CC2 /* function-pointer-tests.cpp */,
 				1D3461BB206FB760009D26B8 /* variables-tests.cpp */,
 				1D0B80A0207048E200E3D5B8 /* variables-json-test.cpp */,
+				1D0B80A62073AFE000E3D5B8 /* struct-json-test.cpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 				1D5234E520575C6F00055CC2 /* function-pointer-tests.cpp in Sources */,
 				1D0B80A1207048E200E3D5B8 /* variables-json-test.cpp in Sources */,
 				1D5234DF2057567E00055CC2 /* class-tests.cpp in Sources */,
+				1D0B80A72073AFE000E3D5B8 /* struct-json-test.cpp in Sources */,
 				1D3FFF5C204F851200CC49DF /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
