@@ -34,6 +34,20 @@
                ReferencedContainer = "container:../library/deductionlib.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1D3461A42069E292009D26B8"
+               BuildableName = "libdeductionjson.a"
+               BlueprintName = "deductionjson"
+               ReferencedContainer = "container:../deductionjson/deductionjson.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
