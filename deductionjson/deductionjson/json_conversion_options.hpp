@@ -16,6 +16,7 @@ namespace deduction {
 	};
 
 	json_conversion_options operator |(json_conversion_options const lhs, json_conversion_options const rhs);
+	void operator |= (json_conversion_options & lhs, json_conversion_options const rhs);
 	bool has_option(const json_conversion_options options, const json_conversion_options value);
 }
 

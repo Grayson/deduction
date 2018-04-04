@@ -13,6 +13,11 @@ namespace deduction {
 		return static_cast<json_conversion_options>(static_cast<unsigned>(lhs) | static_cast<unsigned>(rhs));
 	}
 
+	void operator |= (json_conversion_options & lhs, json_conversion_options const rhs) {
+		auto tmp = static_cast<unsigned>(lhs) | static_cast<unsigned>(rhs);
+		lhs = static_cast<json_conversion_options>(tmp);
+	}
+
 	bool has_option(const json_conversion_options options, const json_conversion_options value) {
 		auto haystack = static_cast<unsigned>(options);
 		auto needle = static_cast<unsigned>(value);
