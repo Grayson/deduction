@@ -72,7 +72,7 @@ TEST_CASE("json -> struct", "[json]") {
 ]
 })test";
 
-	auto const json = deduction::convert_header_to_json("cases/struct.hpp");
+	auto const json = deduction::convert_header_to_json("../cases/struct.hpp");
 	REQUIRE(json == StructJsonExpectation);
 }
 
@@ -95,6 +95,6 @@ char const * const NamespacedStructJsonTest = R"test({
 }
 ]
 })test";
-	auto const json = deduction::convert_header_to_json("cases/namespaced-struct.hpp");
+	auto const json = deduction::convert_header_to_json("../cases/namespaced-struct.hpp");
 	REQUIRE(json == NamespacedStructJsonTest);
 }

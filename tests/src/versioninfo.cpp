@@ -7,7 +7,7 @@
 //
 
 #include "catch.hpp"
-#include <deduction/deductionlib.hpp>
+#include <deduction/deduction.hpp>
 
 TEST_CASE("verify version info", "[info]") {
 	REQUIRE(deduction::version == "0.0.1");

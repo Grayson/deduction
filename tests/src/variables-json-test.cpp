@@ -31,6 +31,6 @@ char const * const JsonExpectation = R"test({
 })test";
 
 TEST_CASE("json -> variables", "[json]") {
-	auto const json = deduction::convert_header_to_json("cases/variables.hpp");
+	auto const json = deduction::convert_header_to_json("../cases/variables.hpp");
 	REQUIRE(json == JsonExpectation);
 }

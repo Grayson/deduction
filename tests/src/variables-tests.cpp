@@ -7,11 +7,11 @@
 //
 
 #include "catch.hpp"
-#include <deduction/deductionlib.hpp>
+#include <deduction/deduction.hpp>
 #include <deduction/variant.hpp>
 
 TEST_CASE("variables", "[variables]") {
-	auto const result = deduction::parse("cases/variables.hpp");
+	auto const result = deduction::parse("../cases/variables.hpp");
 
 	auto & foo = mpark::get<deduction::variable>(result.items[0]);
 	REQUIRE(foo.name == "foo");

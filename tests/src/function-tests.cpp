@@ -7,11 +7,11 @@
 //
 
 #include "catch.hpp"
-#include <deduction/deductionlib.hpp>
+#include <deduction/deduction.hpp>
 #include <deduction/variant.hpp>
 
 TEST_CASE("free functions", "[function]") {
-	auto const result = deduction::parse("cases/function.hpp");
+	auto const result = deduction::parse("../cases/function.hpp");
 	REQUIRE(result.items.size() == 5);
 
 	// void foo();
