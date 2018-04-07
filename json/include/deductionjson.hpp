@@ -9,7 +9,7 @@
 #pragma once
 
 #include <string>
-#include <deduction/deductionlib.hpp>
+#include <deduction/deduction.hpp>
 #include "json_conversion_options.hpp"
 
 namespace deduction {
