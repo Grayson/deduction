@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.10)
 project(deductionjson)
 
 set(PUBLIC_HEADERS
-	include/deductionjson.hpp
-	include/json_conversion_options.hpp)
+	include/deduction/deductionjson.hpp
+	include/deduction/json_conversion_options.hpp)
 
 add_library(deductionjson
 	${PUBLIC_HEADERS}
@@ -23,12 +23,16 @@ add_library(deductionjson
 	src/variable.hpp)
 
 target_include_directories(deductionjson
-	PUBLIC include
-	PRIVATE src)
+	INTERFACE include
+	PRIVATE include/deduction src ../ext/include)
+
 target_link_libraries(deductionjson PRIVATE libdeduction)
 
-install(TARGETS deductionjson DESTINATION lib)
-install(FILES ${PUBLIC_HEADERS} DESTINATION include/deduction)
+install(
+	TARGETS deductionjson
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION archive
+	PUBLIC_HEADER DESTINATION include)
 
 set_target_properties(deductionjson PROPERTIES 
 	CXX_STANDARD 17
