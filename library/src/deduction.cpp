@@ -6,7 +6,7 @@
 //  Copyright © 2018 From Concentrate Software. All rights reserved.
 //
 
-#include "deductionlib.hpp"
+#include "deduction.hpp"
 #include <clang-c/Index.h>
 #include <functional>
 #include <iostream>

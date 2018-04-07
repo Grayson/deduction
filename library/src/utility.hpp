@@ -10,10 +10,11 @@
 
 #define EXPORT __attribute__((visibility("default")))
 
-// Damn you, c++17 according to Xcode stdlib!
+#ifdef __APPLE__
 #include <experimental/optional>
 #ifdef _LIBCPP_EXPERIMENTAL_OPTIONAL
 #define stdoptional std::experimental::optional
+#endif
 #else
 #define stdoptional std::optional
 #endif
