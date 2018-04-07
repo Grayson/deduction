@@ -1,6 +1,6 @@
-# Reduction
+# Deduction
 
-Reduction is a library and command line application that parses C and C++ header files and creates a JSON description from them.  This description exposes details about the public types that can be easily consumed by other tooling.
+Deduction is a library and command line application that parses C and C++ header files and creates a JSON description from them.  This description exposes details about the public types that can be easily consumed by other tooling.
 
 It is primarily intended as part of a trio of projects that intend to make it easier to share code written in C++ by generating bindings for other languages.
 
