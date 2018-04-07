@@ -22,8 +22,8 @@ add_library(libdeduction
 	src/utility.hpp)
 
 target_include_directories(libdeduction
-	PUBLIC include src
-	PRIVATE ../ext/include)
+	INTERFACE include
+	PRIVATE include/deduction src ../ext/include)
 
 find_library(LIBCLANG name clang HINTS ../ext/lib)
 MESSAGE( STATUS "Found libclang: ${LIBCLANG}" )
