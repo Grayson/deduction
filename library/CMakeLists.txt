@@ -4,7 +4,6 @@ project(libdeduction)
 
 set(PUBLIC_HEADERS
 	include/alias.hpp
-	include/cursor.hpp
 	include/deduction.hpp
 	include/enumeration.hpp
 	include/function.hpp
@@ -18,15 +17,12 @@ add_library(libdeduction
 	${PUBLIC_HEADERS}
 	src/clang-utility.cpp
 	src/clang-utility.hpp
-	src/cursor.cpp
 	src/deduction.cpp
 	src/utility.hpp)
 
 target_include_directories(libdeduction
 	PUBLIC include src
 	PRIVATE ../ext/include)
-
-# link_directories(../ext/llvm/lib)
 
 find_library(LIBCLANG name clang HINTS ../ext/lib)
 MESSAGE( STATUS "Found libclang: ${LIBCLANG}" )

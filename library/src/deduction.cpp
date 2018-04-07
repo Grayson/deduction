@@ -14,7 +14,6 @@
 #include <numeric>
 
 #include "clang-utility.hpp"
-#include "cursor.hpp"
 #include "enumeration.hpp"
 #include "function.hpp"
 
@@ -120,14 +119,33 @@ namespace {
 		};
 	}
 
+	bool is_visible(CXCursor const & cursor) {
+		return CXVisibility_Default == clang_getCursorVisibility(cursor);
+	}
+
+	bool is_available(CXCursor const & cursor) {
+		return CXAvailability_Available == clang_getCursorAvailability(cursor);
+	}
+
+	bool is_in_main_file(CXCursor const & cursor) {
+		return clang_Location_isFromMainFile(clang_getCursorLocation(cursor));
+	}
+
+	bool is_preprocessing(CXCursor const & cursor) {
+		return clang_isPreprocessing(clang_getCursorKind(cursor));
+	}
+
+	bool is_invalid(CXCursor const & cursor) {
+		return clang_isInvalid(clang_getCursorKind(cursor));
+	}
+
 	CXChildVisitResult visit(CXCursor cursor, CXCursor parent, CXClientData client_data) {
 		auto items = reinterpret_cast<std::vector<parse_result::item_type> *>(client_data);
 
-		auto wrapper = deduction::cursor { cursor };
-		if (wrapper.is_invalid() || !wrapper.is_visible() || !wrapper.is_available() || !wrapper.is_in_main_file() || wrapper.is_preprocessing())
+		if (is_invalid(cursor) || !is_visible(cursor) || !is_available(cursor) || !is_in_main_file(cursor) || is_preprocessing(cursor))
 			return CXChildVisit_Continue;
 
-		switch (wrapper.kind())
+		switch (clang_getCursorKind(cursor))
 		{
 		case CXCursor_ClassDecl: {
 			items->emplace_back(map_to_structure(cursor, accessibility::acc_private));
@@ -136,7 +154,7 @@ namespace {
 		case CXCursor_EnumDecl: {
 			std::vector<enumeration::case_label> caseLabels;
 			clang_visitChildren(cursor, visit_enum_cases, &caseLabels);
-			items->push_back(enumeration { wrapper.name(), wrapper.full_name(), std::move(caseLabels) });
+			items->push_back(enumeration { get_name(cursor), qualify_name(cursor), std::move(caseLabels) });
 			return CXChildVisit_Continue;
 		}
 		case CXCursor_FunctionDecl: {
@@ -159,7 +177,7 @@ namespace {
 			return CXChildVisit_Recurse;
 		}
 		default:
-			std::cerr << "Unhandled cursor kind: " << wrapper.kind() << " (" << wrapper.type_name() << ")" << std::endl;
+			std::cerr << "Unhandled cursor kind: " << clang_getCursorKind(cursor) << " (" << get_type_name(cursor) << ")" << std::endl;
 		}
 
 		return CXChildVisit_Recurse;
