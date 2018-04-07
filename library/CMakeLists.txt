@@ -26,12 +26,15 @@ target_include_directories(libdeduction
 	PRIVATE include/deduction src ../ext/include)
 
 find_library(LIBCLANG name clang HINTS ../ext/lib)
-MESSAGE( STATUS "Found libclang: ${LIBCLANG}" )
+message( STATUS "Found libclang: ${LIBCLANG}" )
 
-target_link_libraries(libdeduction ${LIBCLANG})
+target_link_libraries(libdeduction PRIVATE ${LIBCLANG})
 
-install(TARGETS libdeduction DESTINATION lib)
-install(FILES ${PUBLIC_HEADERS} DESTINATION include)
+install(
+	TARGETS libdeduction
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION archive
+	PUBLIC_HEADER DESTINATION include)
 
 set_target_properties(libdeduction PROPERTIES 
 	CXX_STANDARD 17
