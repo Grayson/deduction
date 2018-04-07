@@ -18,8 +18,7 @@ add_library(libdeduction
 	${PUBLIC_HEADERS}
 	src/clang-utility.cpp
 	src/clang-utility.hpp
-	src/deduction.cpp
-	src/utility.hpp)
+	src/deduction.cpp)
 
 target_include_directories(libdeduction
 	INTERFACE include
