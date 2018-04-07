@@ -9,8 +9,8 @@
 #pragma once
 
 #include <string>
-#include "parse-result.hpp"
 #include "utility.hpp"
+#include "parse-result.hpp"
 
 namespace deduction {
 	EXPORT extern std::string const & version;
