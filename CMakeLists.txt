@@ -4,3 +4,4 @@ project(deduction)
 
 add_subdirectory(library)
 add_subdirectory(json)
+add_subdirectory(cli)
