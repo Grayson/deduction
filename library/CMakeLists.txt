@@ -16,8 +16,21 @@ if(${USE_STATIC_LIBCLANG})
 	endfunction()
 	
 	find_static_library(LIBCLANG clang ../ext/lib)
+	
+	file(GLOB LLMVLIBS ../ext/lib/*.a)
+	list(FILTER LLMVLIBS EXCLUDE REGEX ".*.libclang.a$")
+	
+	find_library(LIBZ z HINTS /usr/lib/)
+	message( STATUS "Found libz: ${LIBZ}")
+
+	find_library(LIBCURSES curses HINTS /usr/lib/)
+	message( STATUS "Found libcurses: ${LIBCURSES}" )
+	
+	set(SYSTEM_LIBRARIES ${LIBZ} ${LIBCURSES})
+	set(REQUIRED_LIBRARIES ${SYSTEM_LIBRARIES} ${LLMVLIBS})
 else()
 	find_library(LIBCLANG clang NAMES libclang.a HINTS ../ext/lib)
+	set(REQUIRED_LIBRARIES ${LIBCLANG})
 endif()
 
 message( STATUS "Found libclang: ${LIBCLANG}" )
@@ -48,7 +61,7 @@ target_include_directories(libdeduction
 	INTERFACE include
 	PRIVATE include/deduction src ../ext/include)
 
-target_link_libraries(libdeduction PRIVATE ${LIBCLANG})
+target_link_libraries(libdeduction PRIVATE ${REQUIRED_LIBRARIES})
 
 install(
 	TARGETS libdeduction
