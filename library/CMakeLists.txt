@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 # Options
 
-option(USE_STATIC_LIBCLANG "Prefer to link static over dynamic linking for libclang" ON)
+option(USE_STATIC_LIBCLANG "Prefer to link static over dynamic linking for libclang" OFF)
 
 if(${USE_STATIC_LIBCLANG})
 	function(find_static_library RETURN LIBNAME HINTPATH)
