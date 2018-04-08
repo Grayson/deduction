@@ -1,5 +1,29 @@
 cmake_minimum_required(VERSION 3.10)
 
+# Options
+
+option(USE_STATIC_LIBCLANG "Prefer to link static over dynamic linking for libclang" ON)
+
+if(${USE_STATIC_LIBCLANG})
+	function(find_static_library RETURN LIBNAME HINTPATH)
+		if (WIN32 OR MSVC)
+			set(CMAKE_FIND_LIBRARY_SUFFIXES ".lib")
+		elseif (UNIX)
+			set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+		endif()
+		
+		find_library(${RETURN} ${LIBNAME} HINTS ${HINTPATH})
+	endfunction()
+	
+	find_static_library(LIBCLANG clang ../ext/lib)
+else()
+	find_library(LIBCLANG clang NAMES libclang.a HINTS ../ext/lib)
+endif()
+
+message( STATUS "Found libclang: ${LIBCLANG}" )
+
+# Project
+
 project(libdeduction)
 
 set(PUBLIC_HEADERS
@@ -23,9 +47,6 @@ add_library(libdeduction
 target_include_directories(libdeduction
 	INTERFACE include
 	PRIVATE include/deduction src ../ext/include)
-
-find_library(LIBCLANG name clang HINTS ../ext/lib)
-message( STATUS "Found libclang: ${LIBCLANG}" )
 
 target_link_libraries(libdeduction PRIVATE ${LIBCLANG})
 
