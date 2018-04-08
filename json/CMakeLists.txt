@@ -10,13 +10,15 @@ add_library(deductionjson
 	${PUBLIC_HEADERS}
 	src/alias.hpp
 	src/alias.cpp
+	src/deductionjson.cpp
 	src/enumeration.cpp
 	src/enumeration.hpp
 	src/function.cpp
 	src/function.hpp
-	src/deductionjson.cpp
 	src/json.hpp
 	src/json_conversion_options.cpp
+	src/metadata.hpp
+	src/metadata.cpp
 	src/structure.cpp
 	src/structure.hpp
 	src/variable.cpp

@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
 		return -1;
 	}
 
-	auto options = deduction::json_conversion_options::include_file_info;
+	auto options = deduction::json_conversion_options::none;
 	if (shouldBePretty)
 		options |= deduction::json_conversion_options::pretty_print;
 

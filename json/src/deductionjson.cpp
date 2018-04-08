@@ -12,8 +12,9 @@
 #include "json.hpp"
 
 #include "alias.hpp"
-#include "enumeration.hpp"
 #include "function.hpp"
+#include "enumeration.hpp"
+#include "metadata.hpp"
 #include "structure.hpp"
 #include "variable.hpp"
 
@@ -36,7 +37,7 @@ namespace {
 	}
 
 	static char const * const ItemsLabel = "items";
-	static char const * const FilePathLabel = "filepath";
+	static char const * const MetadataLabel = "metadata";
 }
 
 namespace deduction {
@@ -50,11 +51,9 @@ namespace deduction {
 	std::string convert_header_to_json(const std::string & headerPath, json_conversion_options const options) {
 		auto const result = parse(headerPath);
 		auto j = json {
+			{ MetadataLabel, metadata { deduction::version, headerPath } },
 			{ ItemsLabel, map(result) },
 		};
-
-		if (has_option(options, json_conversion_options::include_file_info))
-			j[FilePathLabel] = headerPath;
 
 		auto const tabSize = has_option(options, json_conversion_options::pretty_print) ? 4 : 0;
 		return j.dump(tabSize);
