@@ -1,11 +1,3 @@
-//
-//  variable.h
-//  deductionlib
-//
-//  Created by Grayson Hansard on 3/31/18.
-//  Copyright © 2018 From Concentrate Software. All rights reserved.
-//
-
 #pragma once
 
 #include <string>

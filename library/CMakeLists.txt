@@ -40,16 +40,8 @@ message( STATUS "Found libclang: ${LIBCLANG}" )
 project(libdeduction)
 
 set(PUBLIC_HEADERS
-	include/deduction/alias.hpp
 	include/deduction/deduction.hpp
-	include/deduction/enumeration.hpp
-	include/deduction/function.hpp
-	include/deduction/language.hpp
-	include/deduction/parse-result.hpp
-	include/deduction/structure.hpp
-	include/deduction/utility.hpp
-	include/deduction/variable.hpp
-	include/deduction/variant.hpp)
+	include/deduction/utility.hpp)
 
 add_library(libdeduction
 	${PUBLIC_HEADERS}
@@ -61,7 +53,7 @@ target_include_directories(libdeduction
 	INTERFACE include
 	PRIVATE include/deduction src ../ext/include)
 
-target_link_libraries(libdeduction PRIVATE ${REQUIRED_LIBRARIES})
+target_link_libraries(libdeduction PRIVATE datatypes ${REQUIRED_LIBRARIES})
 
 install(
 	TARGETS libdeduction
