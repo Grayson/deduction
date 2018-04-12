@@ -7,12 +7,14 @@ add_library(datatypes-json
 	include/deduction/json/enumeration.hpp
 	include/deduction/json/function.hpp
 	include/deduction/json/json.hpp
+	include/deduction/json/parse-result.hpp
 	include/deduction/json/structure.hpp
 	include/deduction/json/variable.hpp
 	src/alias.cpp
 	src/enumeration.cpp
 	src/function.cpp
 	src/metadata.cpp
+	src/parse-result.cpp
 	src/structure.cpp
 	src/variable.cpp)
 

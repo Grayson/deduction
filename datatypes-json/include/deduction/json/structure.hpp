@@ -12,6 +12,8 @@
 #include "json.hpp"
 
 namespace deduction {
+	extern char const * const StructureTypeValue;
+
 	void to_json(nlohmann::json & j, const structure::field & parameter);
 	void from_json(const nlohmann::json & j, structure::field & parameter);
 

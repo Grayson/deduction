@@ -25,7 +25,7 @@ namespace deduction {
 	static char const * const IsMutableLabel = "is_mutable";
 	static char const * const ConstructorsLabel = "constructors";
 	static char const * const ObjectTypeLabel = "_type";
-	static char const * const ObjectTypeValue = "struct";
+	char const * const StructureTypeValue = "struct";
 
 	void to_json(json & j, const structure::field & field) {
 		j = json {
@@ -67,7 +67,7 @@ namespace deduction {
 			{ FieldsLabel, structure.fields },
 			{ MethodsLabel, methods },
 			{ ConstructorsLabel, ctors },
-			{ ObjectTypeLabel, ObjectTypeValue },
+			{ ObjectTypeLabel, StructureTypeValue },
 		};
 	}
 

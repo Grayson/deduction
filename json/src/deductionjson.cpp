@@ -16,39 +16,25 @@
 #include <deduction/datatypes/variable.hpp>
 #include <deduction/datatypes/variant.hpp>
 #include <deduction/json/alias.hpp>
-#include <deduction/json/function.hpp>
 #include <deduction/json/enumeration.hpp>
+#include <deduction/json/function.hpp>
+#include <deduction/json/parse-result.hpp>
 #include <deduction/json/structure.hpp>
 #include <deduction/json/variable.hpp>
 #include <deduction/json/json.hpp>
 #include <deduction/json/metadata.hpp>
 
 namespace {
-	using nlohmann::json;
-
-	struct item_visitor {
-		json operator()(const deduction::alias & a) const { return a; }
-		json operator()(const deduction::enumeration & en) const { return en; }
-		json operator()(const deduction::function & fun) const { return fun; }
-		json operator()(const deduction::structure & st) const { return st; }
-		json operator()(const deduction::variable & var) const { return var; }
-	};
-
-	std::vector<json> map(const deduction::parse_result & result) {
-		auto visitor = item_visitor {};
-		auto itemsInJsonFormat = std::vector<json> {};
-		std::transform(std::begin(result.items), std::end(result.items), std::back_inserter(itemsInJsonFormat), [&](const auto & x) { return mpark::visit(visitor, x); });
-		return itemsInJsonFormat;
-	}
-
 	static char const * const ItemsLabel = "items";
 	static char const * const MetadataLabel = "metadata";
 }
 
 namespace deduction {
+	using nlohmann::json;
+
 	std::string convert_parsed_result_to_json(const parse_result & result) {
 		auto j = json {
-			{ ItemsLabel, map(result) },
+			{ ItemsLabel, result },
 		};
 		return j.dump();
 	}
@@ -57,7 +43,7 @@ namespace deduction {
 		auto const result = parse(headerPath);
 		auto j = json {
 			{ MetadataLabel, metadata { deduction::version, headerPath } },
-			{ ItemsLabel, map(result) },
+			{ ItemsLabel, result },
 		};
 
 		auto const tabSize = has_option(options, json_conversion_options::pretty_print) ? 4 : 0;

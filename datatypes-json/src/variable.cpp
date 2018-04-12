@@ -8,6 +8,7 @@
 
 #include <deduction/datatypes/variable.hpp>
 #include "json.hpp"
+#include "variable.hpp"
 
 namespace deduction {
 	using nlohmann::json;
@@ -18,7 +19,7 @@ namespace deduction {
 	static char const * const IsMutableLabel = "is_mutable";
 	static char const * const IsExternLabel = "is_extern";
 	static char const * const ObjectTypeLabel = "_type";
-	static char const * const ObjectTypeValue = "variable";
+	char const * const VariableTypeValue = "variable";
 
 	void to_json(json & j, const variable & variable) {
 		j = json {
@@ -27,7 +28,7 @@ namespace deduction {
 			{ TypeWithoutQualifiersLabel, variable.type_without_qualifiers },
 			{ IsMutableLabel, variable.is_mutable },
 			{ IsExternLabel, variable.is_extern },
-			{ ObjectTypeLabel, ObjectTypeValue },
+			{ ObjectTypeLabel, VariableTypeValue },
 		};
 	}
 

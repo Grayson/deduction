@@ -23,7 +23,7 @@ namespace deduction {
 	static char const * const ParametersLabel = "parameters";
 	static char const * const TypeLabel = "type";
 	static char const * const ObjectTypeLabel = "_type";
-	static char const * const ObjectTypeValue = "function";
+	char const * const FunctionTypeValue = "function";
 
 	void to_json(json & j, const function::parameter & parameter) {
 		j = json {
@@ -43,7 +43,7 @@ namespace deduction {
 			{ FullNameLabel, function.full_name },
 			{ ParametersLabel, function.parameters },
 			{ FunctionReturnTypeLabel, function.return_type },
-			{ ObjectTypeLabel, ObjectTypeValue },
+			{ ObjectTypeLabel, FunctionTypeValue },
 		};
 	}
 

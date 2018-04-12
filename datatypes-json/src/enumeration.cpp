@@ -8,6 +8,7 @@
 
 #include <deduction/datatypes/enumeration.hpp>
 #include "json.hpp"
+#include "enumeration.hpp"
 
 namespace deduction {
 	using nlohmann::json;
@@ -16,13 +17,13 @@ namespace deduction {
 	static char const * const FullNameLabel = "full_name";
 	static char const * const CasesLabel = "cases";
 	static char const * const ObjectTypeLabel = "_type";
-	static char const * const ObjectTypeValue = "enumeration";
+	char const * const EnumerationTypeValue = "enumeration";
 
 	void to_json(json & j, const enumeration::case_label & label) {
 		j = json {
 			{ NameLabel, label.name },
 			{ FullNameLabel, label.full_name },
-			{ ObjectTypeLabel, ObjectTypeValue },
+			{ ObjectTypeLabel, EnumerationTypeValue },
 		};
 	}
 

@@ -13,6 +13,7 @@
 
 namespace deduction {
 	extern char const * const FunctionReturnTypeLabel;
+	extern char const * const FunctionTypeValue;
 
 	void to_json(nlohmann::json & j, const function::parameter & parameter);
 	void from_json(const nlohmann::json & j, function::parameter & parameter);

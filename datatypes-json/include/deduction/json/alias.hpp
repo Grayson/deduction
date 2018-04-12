@@ -12,6 +12,8 @@
 #include "json.hpp"
 
 namespace deduction {
+	extern char const * const AliasTypeLabel;
+
 	void to_json(nlohmann::json & j, const alias & alias);
 	void from_json(const nlohmann::json & j, alias & alias);
 }

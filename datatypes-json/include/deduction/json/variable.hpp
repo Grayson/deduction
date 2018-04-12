@@ -12,6 +12,8 @@
 #include "json.hpp"
 
 namespace deduction {
+	extern char const * const VariableTypeValue;
+
 	void to_json(nlohmann::json & j, const variable & parameter);
 	void from_json(const nlohmann::json & j, variable & parameter);
 }

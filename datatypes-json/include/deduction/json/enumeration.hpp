@@ -12,6 +12,8 @@
 #include "json.hpp"
 
 namespace deduction {
+	extern char const * const EnumerationTypeValue;
+
 	void to_json(nlohmann::json & j, const enumeration::case_label & parameter);
 	void from_json(const nlohmann::json & j, enumeration::case_label & parameter);
 
