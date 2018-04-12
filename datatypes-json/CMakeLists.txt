@@ -20,7 +20,7 @@ target_include_directories(datatypes-json
 	INTERFACE include
 	PRIVATE include/deduction/json src)
 
-target_link_libraries(datatypes-json PRIVATE datatypes)
+target_link_libraries(datatypes-json PUBLIC datatypes)
 
 install(
 	TARGETS datatypes-json

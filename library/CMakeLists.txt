@@ -53,7 +53,9 @@ target_include_directories(libdeduction
 	INTERFACE include
 	PRIVATE include/deduction src ../ext/include)
 
-target_link_libraries(libdeduction PRIVATE datatypes ${REQUIRED_LIBRARIES})
+target_link_libraries(libdeduction
+	PUBLIC datatypes
+	PRIVATE ${REQUIRED_LIBRARIES})
 
 install(
 	TARGETS libdeduction
