@@ -8,7 +8,7 @@
 
 #include "catch.hpp"
 #include <deduction/deduction.hpp>
-#include <deduction/variant.hpp>
+#include <deduction/datatypes/variant.hpp>
 
 TEST_CASE("using alias", "[function pointer]") {
 	auto const result = deduction::parse("../cases/function-pointer.hpp");

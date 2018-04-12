@@ -8,7 +8,7 @@
 
 #include "catch.hpp"
 #include <deduction/deduction.hpp>
-#include <deduction/variant.hpp>
+#include <deduction/datatypes/variant.hpp>
 
 TEST_CASE("free functions", "[function]") {
 	auto const result = deduction::parse("../cases/function.hpp");
