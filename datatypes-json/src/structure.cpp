@@ -10,7 +10,7 @@
 
 #include <algorithm>
 #include <vector>
-#include <deduction/structure.hpp>
+#include <deduction/datatypes/structure.hpp>
 #include "json.hpp"
 #include "function.hpp"
 

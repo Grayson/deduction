@@ -6,7 +6,7 @@
 //  Copyright © 2018 From Concentrate Software. All rights reserved.
 //
 
-#include <deduction/enumeration.hpp>
+#include <deduction/datatypes/enumeration.hpp>
 #include "json.hpp"
 
 namespace deduction {
