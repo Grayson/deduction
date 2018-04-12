@@ -13,9 +13,9 @@
 #include <vector>
 #include <numeric>
 
+#include <deduction/datatypes/enumeration.hpp>
+#include <deduction/datatypes/function.hpp>
 #include "clang-utility.hpp"
-#include "enumeration.hpp"
-#include "function.hpp"
 
 namespace {
 	using namespace deduction;

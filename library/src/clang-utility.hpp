@@ -10,7 +10,7 @@
 
 #include <string>
 #include <clang-c/Index.h>
-#include "language.hpp"
+#include <deduction/datatypes/language.hpp>
 
 namespace deduction::clang_utility {
 	std::string map(CXString && string);

@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <deduction/enumeration.hpp>
+#include <deduction/datatypes/enumeration.hpp>
 #include "json.hpp"
 
 namespace deduction {

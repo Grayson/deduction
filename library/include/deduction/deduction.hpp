@@ -10,7 +10,7 @@
 
 #include <string>
 #include "utility.hpp"
-#include "parse-result.hpp"
+#include <deduction/datatypes/parse-result.hpp>
 
 namespace deduction {
 	EXPORT extern std::string const & version;

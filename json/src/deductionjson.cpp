@@ -8,15 +8,20 @@
 
 #include "deductionjson.hpp"
 #include <vector>
-#include <deduction/variant.hpp>
-#include "json.hpp"
 
-#include "alias.hpp"
-#include "function.hpp"
-#include "enumeration.hpp"
-#include "metadata.hpp"
-#include "structure.hpp"
-#include "variable.hpp"
+#include <deduction/datatypes/alias.hpp>
+#include <deduction/datatypes/function.hpp>
+#include <deduction/datatypes/enumeration.hpp>
+#include <deduction/datatypes/structure.hpp>
+#include <deduction/datatypes/variable.hpp>
+#include <deduction/datatypes/variant.hpp>
+#include <deduction/json/alias.hpp>
+#include <deduction/json/function.hpp>
+#include <deduction/json/enumeration.hpp>
+#include <deduction/json/structure.hpp>
+#include <deduction/json/variable.hpp>
+#include <deduction/json/json.hpp>
+#include <deduction/json/metadata.hpp>
 
 namespace {
 	using nlohmann::json;
