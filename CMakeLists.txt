@@ -4,8 +4,6 @@ project(deduction)
 
 option(DATATYPES_ONLY "Only builds datatypes and datatypes-json projects." OFF)
 
-message("DATATYPES_ONLY:" ${DATATYPES_ONLY})
-
 add_subdirectory(datatypes)
 add_subdirectory(datatypes-json)
 
