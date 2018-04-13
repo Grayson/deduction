@@ -6,8 +6,5 @@ add_library(datatypes INTERFACE)
 
 target_include_directories(datatypes INTERFACE include)
 
-install(
-	TARGETS datatypes
-	LIBRARY DESTINATION lib
-	ARCHIVE DESTINATION archive
-	PUBLIC_HEADER DESTINATION include)
+install(TARGETS datatypes DESTINATION lib)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/deduction DESTINATION include)

@@ -24,11 +24,8 @@ target_include_directories(datatypes-json
 
 target_link_libraries(datatypes-json PUBLIC datatypes)
 
-install(
-	TARGETS datatypes-json
-	LIBRARY DESTINATION lib
-	ARCHIVE DESTINATION archive
-	PUBLIC_HEADER DESTINATION include)
+install(TARGETS datatypes-json DESTINATION lib)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/deduction DESTINATION include)
 
 set_target_properties(datatypes-json PROPERTIES 
 	CXX_STANDARD 17
