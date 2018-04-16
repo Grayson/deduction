@@ -17,7 +17,7 @@ foreach(file ${files})
 		src/main.cpp
 		${file})
 
-	target_link_libraries(${TESTNAME} PRIVATE libdeduction deductionjson)
+	target_link_libraries(${TESTNAME} PRIVATE libdeduction deductionjson datatypes-json)
 	set_target_properties(${TESTNAME} PROPERTIES
 		CXX_STANDARD 17
 		CMAKE_CXX_STANDARD_REQUIRED on
