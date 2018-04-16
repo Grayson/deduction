@@ -22,8 +22,7 @@ namespace deduction {
 	void to_json(json & j, const enumeration::case_label & label) {
 		j = json {
 			{ NameLabel, label.name },
-			{ FullNameLabel, label.full_name },
-			{ ObjectTypeLabel, EnumerationTypeValue },
+			{ FullNameLabel, label.full_name }
 		};
 	}
 
@@ -34,6 +33,7 @@ namespace deduction {
 
 	void to_json(json & j, const enumeration & enumeration) {
 		j = json {
+			{ ObjectTypeLabel, EnumerationTypeValue },
 			{ NameLabel, enumeration.name },
 			{ FullNameLabel, enumeration.full_name },
 			{ CasesLabel, enumeration.case_labels }
