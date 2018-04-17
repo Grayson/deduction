@@ -42,12 +42,12 @@ namespace deduction::clang_utility {
 		return get_name(type);
 	}
 
-	std::string qualify_name(CXCursor & cursor) {
+	std::string qualify_name(CXCursor cursor) {
 		auto canContinue = [](CXCursor const & tmp) {
 			auto kind = clang_getCursorKind(tmp);
 			return !clang_Cursor_isNull(tmp)
-			&& !clang_isInvalid(kind)
-			&& kind != CXCursor_TranslationUnit;
+				&& !clang_isInvalid(kind)
+				&& kind != CXCursor_TranslationUnit;
 		};
 
 		auto components = std::vector<std::string> {};
