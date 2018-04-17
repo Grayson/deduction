@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 
-enable_testing()
-
 file(GLOB files "src/*.cpp")
 foreach(file ${files})
 	get_filename_component(TESTFILENAME ${file} NAME_WE)
