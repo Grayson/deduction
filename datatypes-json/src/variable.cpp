@@ -14,6 +14,7 @@ namespace deduction {
 	using nlohmann::json;
 
 	static char const * const NameLabel = "name";
+	static char const * const FullNameLabel = "full_name";
 	static char const * const TypeLabel = "type";
 	static char const * const TypeWithoutQualifiersLabel = "type_without_qualifiers";
 	static char const * const IsMutableLabel = "is_mutable";
@@ -24,6 +25,7 @@ namespace deduction {
 	void to_json(json & j, const variable & variable) {
 		j = json {
 			{ NameLabel, variable.name },
+			{ FullNameLabel, variable.full_name },
 			{ TypeLabel, variable.type },
 			{ TypeWithoutQualifiersLabel, variable.type_without_qualifiers },
 			{ IsMutableLabel, variable.is_mutable },
@@ -34,6 +36,7 @@ namespace deduction {
 
 	void from_json(const json & j, variable & variable) {
 		variable.name = j.at(NameLabel).get<std::string>();
+		variable.full_name = j.at(FullNameLabel).get<std::string>();
 		variable.type = j.at(TypeLabel).get<std::string>();
 		variable.type_without_qualifiers = j.at(TypeWithoutQualifiersLabel).get<std::string>();
 		variable.is_mutable = j.at(IsMutableLabel).get<bool>();

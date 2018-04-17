@@ -15,12 +15,14 @@ TEST_CASE("variables", "[variables]") {
 
 	auto & foo = mpark::get<deduction::variable>(result.items[0]);
 	REQUIRE(foo.name == "foo");
+	REQUIRE(foo.full_name == "tests::foo");
 	REQUIRE(foo.type == "const int");
 	REQUIRE(foo.type_without_qualifiers == "int");
 	REQUIRE(foo.is_mutable == false);
 
 	auto & bar = mpark::get<deduction::variable>(result.items[1]);
 	REQUIRE(bar.name == "bar");
+	REQUIRE(bar.full_name == "tests::bar");
 	REQUIRE(bar.type == "void *");
 	REQUIRE(bar.type_without_qualifiers == "void *");
 	REQUIRE(bar.is_mutable == true);

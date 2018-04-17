@@ -112,6 +112,7 @@ namespace {
 		auto const typeWithoutModifiers = remove_type_qualifiers(type);
 		return {
 			get_name(cursor),
+			qualify_name(cursor),
 			std::move(type),
 			std::move(typeWithoutModifiers),
 			clang_isConstQualifiedType(clang_getCursorType(cursor)) == 0,

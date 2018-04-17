@@ -15,6 +15,7 @@ char const * const JsonExpectation = R"test({
 "items": [
 {
 "_type": "variable",
+"full_name": "tests::foo",
 "is_extern": true,
 "is_mutable": false,
 "name": "foo",
@@ -23,6 +24,7 @@ char const * const JsonExpectation = R"test({
 },
 {
 "_type": "variable",
+"full_name": "tests::bar",
 "is_extern": true,
 "is_mutable": true,
 "name": "bar",
